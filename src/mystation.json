@@ -1,0 +1,2132 @@
+[
+ {
+   "lineNum": "1호선",
+   "stationName": "가능",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "가산디지털단지",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "간석",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "개봉",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "관악",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "광운대",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "구로",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "군포",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "금정",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "금천구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "남영",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "노량진",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "녹양",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "녹천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "당정",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "대방",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "덕계",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "덕정",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "도봉",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "도봉산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "도원",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "도화",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "독산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동대문",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동두천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동두천중앙",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동묘앞",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동암",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "동인천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "두정",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "망월사",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "명학",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "방학",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "배방",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "백운",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "병점",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "보산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "봉명",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "부개",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "부천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "부평",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "서동탄",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "서울역",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "서정리",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "석계",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "석수",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "성균관대",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "성환",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "세류",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "세마",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "소사",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "소요산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "송내",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "송탄",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "수원",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "시청",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "신길",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "신도림",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "신설동",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "신이문",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "신창(순천향대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "쌍용(나사렛대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "아산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "안양",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "양주",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "역곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "영등포",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "오류동",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "오산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "오산대",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "온수",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "온양온천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "외대앞",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "용산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "월계",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "의왕",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "의정부",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "인천",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "제기동",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "제물포",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "종각",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "종로3가",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "종로5가",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "주안",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "중동",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "지제",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "지행",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "직산",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "진위",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "창동",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "천안",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "청량리(서울시립대입구)",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "평택",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "화서",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "회기",
+   "mystation": false
+ },
+ {
+   "lineNum": "1호선",
+   "stationName": "회룡",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "강남",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "강변(동서울터미널)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "건대입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "교대(법원·검찰청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "구로디지털단지",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "구의(광진구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "까치산",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "낙성대",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "당산",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "대림(구로구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "도림천",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "동대문역사문화공원",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "뚝섬",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "문래",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "방배",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "봉천",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "사당",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "삼성(무역센터)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "상왕십리",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "서울대입구(관악구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "서초",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "선릉",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "성수",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "시청",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신답",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신당",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신대방",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신도림",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신림",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신설동",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신정네거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "신촌",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "아현",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "양천구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "역삼",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "영등포구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "왕십리",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "용답",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "용두(동대문구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "을지로3가",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "을지로4가",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "을지로입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "이대",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "잠실(송파구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "잠실나루",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "잠실새내",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "종합운동장",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "충정로(경기대입구)",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "한양대",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "합정",
+   "mystation": false
+ },
+ {
+   "lineNum": "2호선",
+   "stationName": "홍대입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "가락시장",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "경복궁(정부서울청사)",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "경찰병원",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "고속터미널",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "교대(법원·검찰청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "구파발",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "금호",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "남부터미널(예술의전당)",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "녹번",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "대곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "대청",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "대치",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "대화",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "도곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "독립문",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "동대입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "마두",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "매봉",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "무악재",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "백석",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "불광",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "삼송",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "수서",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "신사",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "안국",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "압구정",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "약수",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "양재(서초구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "연신내",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "오금",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "옥수",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "원당",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "을지로3가",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "일원",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "잠원",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "정발산",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "종로3가",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "주엽",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "지축",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "충무로",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "학여울",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "홍제",
+   "mystation": false
+ },
+ {
+   "lineNum": "3호선",
+   "stationName": "화정",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "경마공원",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "고잔",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "과천",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "금정",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "길음",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "남태령",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "노원",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "당고개",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "대공원",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "대야미",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "동대문",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "동대문역사문화공원",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "동작(현충원)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "명동",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "미아",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "미아사거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "반월",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "범계",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "사당",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "산본",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "삼각지",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "상계",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "상록수",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "서울역",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "선바위",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "성신여대입구(돈암)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "수리산",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "수유(강북구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "숙대입구(갈월)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "신길온천",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "신용산",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "쌍문",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "안산",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "오이도",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "이촌(국립중앙박물관)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "인덕원",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "정부과천청사",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "정왕",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "중앙",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "창동",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "초지",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "총신대입구(이수)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "충무로",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "평촌",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "한대앞",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "한성대입구(삼선교)",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "혜화",
+   "mystation": false
+ },
+ {
+   "lineNum": "4호선",
+   "stationName": "회현(남대문시장)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "강동",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "개롱",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "개화산",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "거여",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "고덕",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "공덕",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "광나루(장신대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "광화문(세종문화회관)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "군자(능동)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "굽은다리(강동구민회관앞)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "길동",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "김포공항",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "까치산",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "답십리",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "동대문역사문화공원",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "둔촌동",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "마곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "마장",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "마천",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "마포",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "명일",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "목동",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "발산",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "방이",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "방화",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "상일동",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "서대문",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "송정",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "신금호",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "신길",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "신정(은행정)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "아차산(어린이대공원후문)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "애오개",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "양평",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "여의나루",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "여의도",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "영등포구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "영등포시장",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "오금",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "오목교(목동운동장앞)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "올림픽공원(한국체대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "왕십리",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "우장산",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "을지로4가",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "장한평",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "종로3가(탑골공원)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "천호(풍납토성)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "청구",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "충정로(경기대입구)",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "행당",
+   "mystation": false
+ },
+ {
+   "lineNum": "5호선",
+   "stationName": "화곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "고려대(종암)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "공덕",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "광흥창(서강)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "구산",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "녹사평(용산구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "대흥(서강대앞)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "독바위",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "돌곶이",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "동묘앞",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "디지털미디어시티",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "마포구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "망원",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "버티고개",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "보문",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "봉화산(서울의료원)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "불광",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "삼각지",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "상수",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "상월곡(한국과학기술연구원)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "새절(신사)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "석계",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "신당",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "안암(고대병원앞)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "약수",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "역촌",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "연신내",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "월곡(동덕여대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "월드컵경기장(성산)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "응암",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "이태원",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "증산(명지대앞)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "창신",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "청구",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "태릉입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "한강진",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "합정",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "화랑대(서울여대입구)",
+   "mystation": false
+ },
+ {
+   "lineNum": "6호선",
+   "stationName": "효창공원앞",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "가산디지털단지",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "강남구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "건대입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "고속터미널",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "공릉(서울과학기술대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "광명사거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "광명사거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "군자(능동)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "굴포천",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "까치울",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "남구로",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "남성",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "내방",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "노원",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "논현",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "대림(구로구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "도봉산",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "뚝섬유원지",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "마들",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "먹골",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "면목",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "반포",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "보라매",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "부천시청",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "부천종합운동장",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "부평구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "사가정",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "삼산체육관",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "상도",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "상동",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "상봉(시외버스터미널)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "수락산",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "숭실대입구(살피재)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "신대방삼거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "신중동",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "신풍",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "어린이대공원(세종대)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "온수(성공회대입구)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "용마산",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "장승배기",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "장암",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "중계",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "중곡",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "중화",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "천왕",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "철산",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "청담",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "총신대입구(이수)",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "춘의",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "태릉입구",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "하계",
+   "mystation": false
+ },
+ {
+   "lineNum": "7호선",
+   "stationName": "학동",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "가락시장",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "강동구청",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "남한산성입구(성남법원·검찰청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "단대오거리",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "모란",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "몽촌토성(평화의문)",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "문정",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "복정",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "산성",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "석촌",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "송파",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "수진",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "신흥",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "암사",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "잠실(송파구청)",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "장지",
+   "mystation": false
+ },
+ {
+   "lineNum": "8호선",
+   "stationName": "천호(풍납토성)",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "가양",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "개화",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "고속터미널",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "공항시장",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "구반포",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "국회의사당",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "김포공항",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "노들",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "노량진",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "당산",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "동작(현충원)",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "등촌",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "마곡나루",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "봉은사",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "사평",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "삼성중앙",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "샛강",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "선유도",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "선정릉",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "신논현",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "신목동",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "신반포",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "신방화",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "양천향교",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "언주",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "여의도",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "염창",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "종합운동장",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "증미",
+   "mystation": false
+ },
+ {
+   "lineNum": "9호선",
+   "stationName": "흑석(중앙대입구)",
+   "mystation": false
+ }
+]

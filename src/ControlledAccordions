@@ -1,0 +1,98 @@
+import {makeStyles} from "@material-ui/core/styles";
+import React from "react";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import Collapse from "@material-ui/core/Collapse";
+import line1 from "./image/selected_line1.svg"
+import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+const NestedList = (props) => {
+    const classes = useStyles();
+    const danger_list = useSelector(state => state.danger.list);
+    const [open, setOpen] = React.useState(true);
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(!open);
+    };
+
+    function dangerStation(line) {
+        line = line + "호선"
+        var dangerList = []
+
+        for (var i = 0; i < danger_list.length; i++) {
+            // console.log(danger_list[i].stationName)
+            if (danger_list[i].lineNum == line) {
+                if (danger_list[i].danger == "위험" || danger_list[i].danger == "매우위험") {
+                    var stationName = danger_list[i].stationName
+                    dangerList = [...dangerList, stationName]
+                }
+            }
+        }
+        const temp = new Set(dangerList)
+        var dangerNameList = [...temp];
+        return dangerNameList
+    }
+
+    const dangerNameList1 = dangerStation(1)
+
+    return (
+        <div>
+            <List
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+                className={classes.root}
+                style={{margin: "10px 0 0 3%", width: "100%"}}
+            >
+                <ListItem button onClick={handleClick}>
+                    <ListItemIcon>
+                        <img src={line1}/>
+                    </ListItemIcon>
+                    {/*<ListItemText style={{color: "#616161", fontWeight: "bolder", fontSize: "14dp"}} primary="1호선"/>*/}
+                    <text style={{fontSize: "0.9375em", color: "#616161", marginRight: "auto", marginLeft: "-15px"}}>1호선
+                    </text>
+                    {open ? <ExpandLess/> : <ExpandMore/>}
+                </ListItem>
+                <Collapse in={open} timeout="auto" unmountOnExit style={{backgroundColor: "#F2F2F2"}}>
+                    <List component="div" disablePadding>
+                        <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
+                            {dangerNameList1.map((list, index) => {
+                                return (
+                                    <ListItem button className={classes.nested} key={index}>
+                                        <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
+                                    </ListItem>
+                                )
+                            })}
+                        </Link>
+                    </List>
+                </Collapse>
+            </List>
+
+        </div>
+
+    );
+}
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: theme.palette.background.paper,
+    },
+    nested: {
+        paddingLeft: theme.spacing(4),
+    },
+}));
+
+export default NestedList;
