@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import styled from "styled-components";
-import msgButton from "./image/msgButton.svg"
+import callButton from "../image/callButton.svg"
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MsgModal() {
+export default function CallModal() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
 
@@ -34,7 +34,7 @@ export default function MsgModal() {
 
     return (
         <div>
-            <img onClick={handleOpen} src={msgButton}/>
+            <img onClick={handleOpen} src={callButton}/>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -50,19 +50,17 @@ export default function MsgModal() {
                 <Fade in={open}>
                     <div className={classes.paper} style={{width: "25%", height: "50%"}}>
                         <ColAlign>
-                            <h3 id="transition-modal-title">헬프콜 서비스 문자로 요청하기</h3>
-                            <div style={{backgroundColor: "#F2F2F2", width: "105%", height: "90%", borderRadius: "20px"}}>
+                            <h3 id="transition-modal-title">헬프콜 서비스 전화로 요청하기</h3>
+                            <div style={{backgroundColor: "#F2F2F2", width: "105%", height: "60%", borderRadius: "20px"}}>
                                 <ColAlign>
-                                    <text id="transition-modal-description" style={{fontWeight: "bold", color: "#4378FF", fontSize: "12sp"}}>요청역</text>
-                                    <text id="transition-modal-description" style={{fontWeight: "bolder", fontSize: "14px"}}>신촌역 2호선</text>
+                                    <text id="transition-modal-description" style={{fontWeight: "bold", color: "#4378FF", fontSize: "12sp", marginBottom: "-20px"}}>요청역</text>
+                                    <text id="transition-modal-description" style={{fontWeight: "bolder", fontSize: "14px", marginBottom: "-30px"}}>신촌역 2호선</text>
                                     <text id="transition-modal-description" style={{fontSize: "14px"}}>02-111-1234</text>
-                                    <text id="transition-modal-description" style={{fontWeight: "bold", color: "#4378FF", fontSize: "12sp"}}>보낼내용</text>
-                                    <text id="transition-modal-description" style={{fontSize: "14px"}}>출발역 / 출발시간 / 요청역 / 탑승 위치</text>
+                                    <text id="transition-modal-description" style={{fontSize: "14px"}}>출발역 / 출발시간 / 요청역 / 탑승 위치를<br/>확인해주세요 :)</text>
                                 </ColAlign>
                             </div>
-                            <text id="transition-modal-description" style={{fontSize: "14px",marginTop: "20px"}}>문자 요청의 경우 담당자에게</text>
-                            <text id="transition-modal-description" style={{fontSize: "14px"}}>확인 전화가 올 수 있습니다.</text>
-                            <text id="transition-modal-description" style={{fontSize: "14px", marginBottom : "20px"}}>기본 문자 서비스로 연결됩니다.</text>
+                            <text id="transition-modal-description" style={{fontSize: "14px",marginTop: "20px"}}>전화걸기 버튼을 누르시면</text>
+                            <text id="transition-modal-description" style={{fontSize: "14px", marginBottom : "30px"}}>기본 전화 서비스로 연결됩니다.</text>
 
                             <Button>요청하기</Button>
                         </ColAlign>
@@ -84,7 +82,7 @@ const ColAlign = styled.div`
 
 const Button = styled.button`
     width: 105%;
-    height: 20%;
+    height: 15%;
     border: 0;
     background: #4378FF;
     box-shadow: 0px 0px 11px rgba(175, 175, 175, 0.25);

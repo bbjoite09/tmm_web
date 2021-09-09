@@ -1,17 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
+
+// image resource
 import selected_line1 from "./image/selected_line1.svg"
 import selected_line2 from "./image/selected_line2.svg"
 import selectedX_line2 from "./image/selectedX_line2.svg"
 import unchecked from "./image/unchecked.svg"
 
-import MsgModal from "./MsgModal";
-import CallModal from "./CallModal";
+// components
+import MsgModal from "./components/MsgModal";
+import CallModal from "./components/CallModal";
+
+
 
 const Details = (props) => {
     const dispatch = useDispatch();
     const danger_list = useSelector((state) => state.danger.list);
+
+    const nowName = props.match.params.index;
+    console.log(nowName);
 
     return (
         <div style={{margin: "1% 0 0 5%"}}>

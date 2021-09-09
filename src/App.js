@@ -32,6 +32,7 @@ import Search from "./Search";
 import name_list from "./mystation.json"
 import {useSelector} from "react-redux";
 import * as Hangul from 'hangul-js';
+import {findByDisplayValue} from "@testing-library/react";
 
 // 스토어가 가진 상태값을 props로 받아오기 위한 함수
 const mapStateTopProps = (state) => ({
@@ -70,7 +71,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {search:null, lineNum: "line"};
+        this.state = {search: null, lineNum: "line", showDiv: true};
 
         this.text = React.createRef();
         this.focusTextInput = this.focusTextInput.bind(this);
@@ -78,6 +79,7 @@ class App extends React.Component {
 
     focusTextInput() {
         this.text.current.focus();
+        <items/>
     }
 
     searchSpace = (event) => {
@@ -87,15 +89,6 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.load();
-        // const dangerDB = firestore.collection("dangerDB");
-
-        // firebase 데이터 입력
-
-        // for (var i = 0; i <= dangerData.length; i++) {
-        //     var n = i + '';
-        //     var idx = n.length >= 3 ? n : new Array(3 - n.length + 1).join('0') + n;
-        //     dangerDB.doc(`${idx}`).set(dangerData[i]);
-        // }
 
         console.log(this.text);
         console.log(this.text.current);
@@ -106,23 +99,40 @@ class App extends React.Component {
     render() {
         const items = search_list.filter((data) => {
             var str = ""
-            if(this.state.search == null){return 0}
-            else if(data.stationName.includes(this.text.current.value) || data.diassembled.includes(Hangul.disassemble(this.text.current.value).join(""))){return data}
+            if (this.state.search == null) {
+                return
+            } else if (data.stationName.includes(this.text.current.value) || data.diassembled.includes(Hangul.disassemble(this.text.current.value).join(""))) {
+                return data
+            } else if (this.state.search === "") {
+                this.props.history.push("/searchNone")
+            }
+
         })
             .map(data => {
-            return (
-                <div>
-                    <ul>
-                        <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
-                            <li style={{position: 'relative', left: '10vh'}}>
-                            <span style={{marginLeft: "10px"}}>{data.lineNum} - {data.stationName}</span>
-                        </li>
-                        </Link>
+                return (
+                    <div>
+                        <div style={{
+                            width: "100%",
+                            height: "41px",
+                            border: "1px solid #E7E7E7",
+                            display: "flex",
+                            alignItems: "center"
+                        }} onClick={() => {
+                            this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
+                        }}>
 
-                    </ul>
-                </div>
-            )
-        })
+                            <text style={{
+                                alignmentBaseline: "center",
+                                position: 'relative',
+                                left: "10vh",
+                                marginLeft: "20%"
+                            }}>{data.lineNum} - {data.stationName}</text>
+                        </div>
+
+
+                    </div>
+                )
+            })
 
         return (
 
@@ -141,12 +151,6 @@ class App extends React.Component {
                 <Divider style={{width: "100%"}}/>
                 {items}
 
-                {/*-------------------------------------------------*/
-                }
-
-
-                {/*<Route path="/" exact render={(props) => (<Home/>)}/>*/
-                }
                 <Route path="/" exact render={(props) => (
                     <Home
                         list={this.props.danger_list}
@@ -155,7 +159,7 @@ class App extends React.Component {
                 )}/>
                 <Route path="/searchNone" component={None}/>
                 <Route path="/info" component={TmmInfo}/>
-                <Route path="/details" component={Details}/>
+                <Route path="/details=:index" component={Details}/>
             </div>
 
         )
@@ -164,38 +168,38 @@ class App extends React.Component {
 
 
 const RowAlign = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-flex-direction: row;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 `;
 
 const InputBox = styled.input`
-width: 40%;
-height: 44px;
-margin-left: 25px;
-background-color: #F2F2F2;
-border-radius: 10px;
-border: 0;
-text-align: center;
-font-size: 15px;
-&: focus
-{
-    outline: none;
-    border: 1
-    px
-    solid
-    #dadbdb;
-}
+    width: 40%;
+    height: 44px;
+    margin-left: 25px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+    font-size: 15px;
+    &: focus
+    {
+        outline: none;
+        border: 1
+        px
+        solid
+        #dadbdb;
+    }
 `;
 
 const NoneImg = styled.img`
-width: 40%;
-position: absolute;
-top: 55%;
-left: 50%;
-transform: translate(-50%, -50%);
+    width: 40%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `;
 
 

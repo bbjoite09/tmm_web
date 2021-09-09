@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import tmm_info from "./image/tmm_info.svg"
-import NestedList from "./NestedList";
-import ControlledAccordions from "./ControlledAccordions"
+import NestedList from "./components/NestedList";
+import ControlledAccordions from "./components/ControlledAccordions"
 import mystation1 from "./image/mystation_1.svg"
 import Divider from '@material-ui/core/Divider';
 
