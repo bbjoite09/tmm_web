@@ -17,6 +17,7 @@ import line8 from "../image/selected_line8.svg"
 import line9 from "../image/selected_line9.svg"
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
+import {withRouter} from "react-router";
 
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -86,15 +87,16 @@ const NestedList = (props) => {
                 <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                        <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
+
                             {dangerNameList1.map((list, index) => {
                                 return (
-                                    <ListItem button className={classes.nested} key={index}>
+                                    <ListItem button className={classes.nested} key={index}
+                                    onClick={() => {props.history.push("/details="+"1"+list)}}>
                                         <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                     </ListItem>
                                 )
                             })}
-                        </Link>
+
                     </List>
                 </Collapse>
             </AccordionDetails>
@@ -113,15 +115,16 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
+
                         {dangerNameList2.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"2"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
+
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -141,15 +144,16 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
+
                         {dangerNameList3.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"3"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
+
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -169,15 +173,15 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList4.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"4"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
+
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -196,15 +200,15 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList5.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"5"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
+
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -224,15 +228,15 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList6.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"6"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
+
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -251,15 +255,14 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList7.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"7"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -279,15 +282,14 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList8.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"8"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -307,15 +309,14 @@ const NestedList = (props) => {
         <AccordionDetails style={{backgroundColor: "#F2F2F2"}}>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <Link to="/details" style={{color: "#616161", textDecoration: "none"}}>
                         {dangerNameList9.map((list, index) => {
                             return (
-                                <ListItem button className={classes.nested} key={index}>
+                                <ListItem button className={classes.nested} key={index}
+                                onClick={() => {props.history.push("/details="+"9"+list)}}>
                                     <text style={{fontSize: "0.9375em", color: "#616161"}}>{list}</text>
                                 </ListItem>
                             )
                         })}
-                    </Link>
                 </List>
             </Collapse>
         </AccordionDetails>
@@ -342,4 +343,4 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default NestedList;
+export default withRouter(NestedList);

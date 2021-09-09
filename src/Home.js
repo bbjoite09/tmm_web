@@ -5,6 +5,7 @@ import NestedList from "./components/NestedList";
 import ControlledAccordions from "./components/ControlledAccordions"
 import mystation1 from "./image/mystation_1.svg"
 import Divider from '@material-ui/core/Divider';
+import {withRouter} from "react-router";
 
 import {useSelector, useDispatch} from "react-redux";
 
@@ -34,7 +35,7 @@ const Home = (props) => {
             {/* 우측 - 단차 위험 호선*/}
             <Box style={{background: "white"}}>
                 <h3 style={{margin: "5% 0 0 3%"}}>단차 위험 호선</h3>
-                <NestedList/>
+                <NestedList {...props}/>
 
             </Box>
         </RowAlign>
@@ -73,4 +74,4 @@ const Box = styled.div`
     color: black;
 `;
 
-export default Home;
+export default withRouter(Home);
