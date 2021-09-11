@@ -32,6 +32,7 @@ export default function MsgModal() {
         setOpen(false);
     };
 
+
     return (
         <div>
             <img onClick={handleOpen} src={msgButton}/>

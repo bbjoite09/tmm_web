@@ -1,5 +1,7 @@
 import {makeStyles} from "@material-ui/core/styles";
 import React from "react";
+
+// resource
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -15,15 +17,19 @@ import line6 from "../image/selected_line6.svg"
 import line7 from "../image/selected_line7.svg"
 import line8 from "../image/selected_line8.svg"
 import line9 from "../image/selected_line9.svg"
-import {Link} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {withRouter} from "react-router";
-
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+
+// lib
+import {Link} from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
+import {withRouter} from "react-router";
+import station from "../station.json"
+
 
 const NestedList = (props) => {
     const classes = useStyles();
@@ -40,25 +46,24 @@ const NestedList = (props) => {
         setOpen(!open);
     };
 
+    const tempDangerDB = [...station]
+
     function dangerStation(line) {
-        line = line + "호선"
         var dangerList = []
 
-        for (var i = 0; i < danger_list.length; i++) {
+        for (var i = 0; i < tempDangerDB.length; i++) {
             // console.log(danger_list[i].stationName)
-            if (danger_list[i].lineNum == line) {
-                if (danger_list[i].danger == "위험" || danger_list[i].danger == "매우위험") {
-                    var stationName = danger_list[i].stationName
+            if (tempDangerDB[i].lineNum == line) {
+                if (tempDangerDB[i].step == 1) {
+                    var stationName = tempDangerDB[i].stationName
                     dangerList = [...dangerList, stationName]
                 }
             }
         }
-        const temp = new Set(dangerList)
-        var dangerNameList = [...temp];
 
-        dangerNameList = dangerNameList.sort()
+        dangerList = dangerList.sort()
 
-        return dangerNameList
+        return dangerList
     }
 
     const dangerNameList1 = dangerStation(1)

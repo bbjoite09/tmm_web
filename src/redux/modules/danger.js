@@ -1,14 +1,15 @@
-import {firestore} from "../../firebase";
+import myStation from "../../mystation.json"
 import dangerData from "../../dangerData"
-const danger_db = firestore.collection("danger");
 
 // Actions
 const LOAD = "danger/LOAD";
+const UPDATE = "danger/UPDATE";
 
 // initialState
 const initialState = {
     // 상태 변화를 체크하기 위해 자료 형태 변경
     list: dangerData,
+    myStationList: myStation,
     is_loaded: false,
 };
 
@@ -16,24 +17,11 @@ const initialState = {
 export const loadDanger = (danger) => {
     return {type: LOAD, danger};
 }
-
-
-// 통신
-export const loadDangerFB = () => {
-    return function (dispatch) {
-        danger_db.get().then((docs) => {
-            let danger_data = [];
-            docs.forEach((doc) => {
-
-                if (doc.exists) {
-                    danger_data = [...danger_data, {id: doc.id, ...doc.data()}];
-                }
-            })
-            console.log(danger_data);
-            dispatch(loadDanger(danger_data));
-        });
-    }
+export const updateCheck = (name, line) => {
+    return {type: UPDATE, name, line};
 }
+
+
 
 // Reducer
 export default function reducer(state = initialState, action = {}) {
@@ -43,6 +31,20 @@ export default function reducer(state = initialState, action = {}) {
             //     return {list: action.danger, is_loaded: true};
             // }
             return state;
+        }
+        case "danger/UPDATE": {
+            // var nowState = state.checkState? false: true
+            // return {...state, checkState: nowState}
+
+            const myList = state.myStationList.map((l) => {
+                if (l.stationName === action.name && l.lineNum === action.line) {
+                    var myState = l.checkState ? false : true
+                    return {...l, checkState: myState};
+                }
+                return l;
+            });
+
+            return {myStationList: myList};
         }
 
         default:

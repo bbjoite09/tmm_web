@@ -3,14 +3,38 @@ import styled from "styled-components";
 import tmm_info from "./image/tmm_info.svg"
 import NestedList from "./components/NestedList";
 import ControlledAccordions from "./components/ControlledAccordions"
-import mystation1 from "./image/mystation_1.svg"
 import Divider from '@material-ui/core/Divider';
 import {withRouter} from "react-router";
+
+import mystation1 from "./image/mystation_1.svg"
+import mystation2 from "./image/mystation_2.svg"
+import mystation3 from "./image/mystation_3.svg"
+import mystation4 from "./image/mystation_4.svg"
+import mystation5 from "./image/mystation_5.svg"
+import mystation6 from "./image/mystation_6.svg"
+import mystation7 from "./image/mystation_7.svg"
+import mystation8 from "./image/mystation_8.svg"
+import mystation9 from "./image/mystation_9.svg"
 
 import {useSelector, useDispatch} from "react-redux";
 
 const Home = (props) => {
-    const danger_list = useSelector(state => state.danger.list);
+    const myStationList = useSelector(state => state.danger.myStationList);
+
+    function getImage(line) {
+        switch (line) {
+            case "1" : return mystation1;
+            case "2" : return mystation2;
+            case "3" : return mystation3;
+            case "4" : return mystation4;
+            case "5" : return mystation5;
+            case "6" : return mystation6;
+            case "7" : return mystation7;
+            case "8" : return mystation8;
+            case "9" : return mystation9;
+        }
+    }
+
 
     return (
         <RowAlign>
@@ -22,12 +46,23 @@ const Home = (props) => {
                      }}
                 />
                 <h3 style={{margin: "10% 0 5% 20%"}}>자주 찾는 역</h3>
-                <Divider style={{width: "60%", margin: "0 0 5% 20%", overflowX:"hidden", overflowY: "auto"}}/>
+                <Divider style={{width: "60%", margin: "0 0 5% 20%", overflowX: "hidden", overflowY: "auto"}}/>
                 <MyStation>
-                    <ColAlign>
-                        <img src={mystation1} style={{width: "80%"}}/>
-                        <text style={{fontSize: "0.9375em"}}>서울역</text>
-                    </ColAlign>
+
+
+                    {myStationList.map((l, idx) => {
+                        if (l.checkState === true) {
+                            return (
+                                <ColAlign>
+                                    <img src={getImage(l.lineNum[0])} style={{width: "50dp"}}  onClick={() => {props.history.push("/details="+ l.lineNum[0] +l.stationName)}}/>
+                                    <text style={{fontSize: "0.9375em"}}>{l.stationName}</text>
+                                </ColAlign>
+                            )
+                        }
+
+                    })}
+
+
                 </MyStation>
 
             </Box>

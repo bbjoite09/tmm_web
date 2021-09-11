@@ -27,7 +27,8 @@ import line7 from "./image/selected_line7.svg"
 import line8 from "./image/selected_line8.svg"
 import line9 from "./image/selected_line9.svg"
 
-import Search from "./Search";
+import unchecked from "./image/unchecked.svg"
+import checked from "./image/checked.svg"
 
 import name_list from "./mystation.json"
 import {useSelector} from "react-redux";
@@ -89,10 +90,6 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.load();
-
-        console.log(this.text);
-        console.log(this.text.current);
-
     }
 
 
