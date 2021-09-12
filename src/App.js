@@ -1,13 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import {withRouter} from "react-router";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux';
 
 // DB
-import dangerData from "./dangerData";
-import {firestore} from "./firebase";
 import logo from "./image/tmm_logo_2.svg";
-import divider from "./image/divider.svg";
 import styled from "styled-components";
 import Divider from '@material-ui/core/Divider';
 
@@ -17,23 +14,21 @@ import Details from "./Details"
 import TmmInfo from "./TmmInfo";
 import {loadDanger} from "./redux/modules/danger";
 
-import line1 from "./image/selected_line1.svg"
-import line2 from "./image/selected_line2.svg"
-import line3 from "./image/selected_line3.svg"
-import line4 from "./image/selected_line4.svg"
-import line5 from "./image/selected_line5.svg"
-import line6 from "./image/selected_line6.svg"
-import line7 from "./image/selected_line7.svg"
-import line8 from "./image/selected_line8.svg"
-import line9 from "./image/selected_line9.svg"
-
-import unchecked from "./image/unchecked.svg"
-import checked from "./image/checked.svg"
 
 import name_list from "./mystation.json"
-import {useSelector} from "react-redux";
 import * as Hangul from 'hangul-js';
-import {findByDisplayValue} from "@testing-library/react";
+
+// image
+import selected1 from "./image/selected_line1.svg"
+import selected2 from "./image/selected_line2.svg"
+import selected3 from "./image/selected_line3.svg"
+import selected4 from "./image/selected_line4.svg"
+import selected5 from "./image/selected_line5.svg"
+import selected6 from "./image/selected_line6.svg"
+import selected7 from "./image/selected_line7.svg"
+import selected8 from "./image/selected_line8.svg"
+import selected9 from "./image/selected_line9.svg"
+
 
 // 스토어가 가진 상태값을 props로 받아오기 위한 함수
 const mapStateTopProps = (state) => ({
@@ -67,6 +62,28 @@ search_list.forEach(function (item) {
 
 // console.log(search_list);
 
+function getImage(line) {
+    switch (line) {
+        case "1호선" :
+            return selected1;
+        case "2호선" :
+            return selected2;
+        case "3호선" :
+            return selected3;
+        case "4호선" :
+            return selected4;
+        case "5호선" :
+            return selected5;
+        case "6호선" :
+            return selected6;
+        case "7호선" :
+            return selected7;
+        case "8호선" :
+            return selected8;
+        case "9호선" :
+            return selected9;
+    }
+}
 
 class App extends React.Component {
 
@@ -111,22 +128,21 @@ class App extends React.Component {
                         <div style={{
                             width: "100%",
                             height: "41px",
-                            border: "1px solid #E7E7E7",
                             display: "flex",
                             alignItems: "center"
                         }} onClick={() => {
                             this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
-                            this.setState({showDiv: true})
                         }}>
-                            <text style={{
-                                alignmentBaseline: "center",
-                                position: 'relative',
-                                left: "10vh",
-                                marginLeft: "20%"
-                            }}>{data.lineNum} - {data.stationName}</text>
+                            <RowAlign style={{width: "50%", justifyContent: "flex-start", alignItems: "center"}}>
+                                <img src={getImage(data.lineNum)} style={{width: "4%"}}/>
+                                <p style={{ marginLeft: "3%",}}>{data.stationName}</p>
+                            </RowAlign>
+
+
+
+
                         </div>
-
-
+                        <Divider/>
                     </div>
                 )
             })
@@ -145,7 +161,7 @@ class App extends React.Component {
 
                 </RowAlign>
                 <Divider style={{width: "100%"}}/>
-                {/*{items}*/}
+                {items}
 
                 <Route path="/" exact render={(props) => (
                     <Home
@@ -153,6 +169,7 @@ class App extends React.Component {
                         history={this.props.history}
                     />
                 )}/>
+
                 <Route path="/searchNone" component={None}/>
                 <Route path="/info" component={TmmInfo}/>
                 <Route path="/details=:index" component={Details}/>

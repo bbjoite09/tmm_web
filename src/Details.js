@@ -104,7 +104,7 @@ const Details = (props) => {
     }
 
     return (
-        <div style={{position: "absolute", left: "50%", top: "10%", transform: "translate(-50%, 0)"}}>
+        <div style={{position: "absolute", left: "50%", transform: "translate(-50%, 0)"}}>
             <RowAlign>
                 <h1 style={{marginRight: "3%"}}>{line} {name}</h1>
                 <img src={getImage(line[0])} style={{margin: "1% 3% 1% 0"}}/>
