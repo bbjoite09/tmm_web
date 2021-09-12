@@ -2034,6 +2034,11 @@
    "stationName": "동작(현충원)",
    "checkState": false
  },
+  {
+   "lineNum": "9호선",
+   "stationName": "둔촌오륜",
+   "checkState": false
+ },
  {
    "lineNum": "9호선",
    "stationName": "등촌",
@@ -2057,6 +2062,21 @@
  {
    "lineNum": "9호선",
    "stationName": "삼성중앙",
+   "checkState": false
+ },
+  {
+   "lineNum": "9호선",
+   "stationName": "삼전",
+   "checkState": false
+ },
+  {
+   "lineNum": "9호선",
+   "stationName": "석촌고분",
+   "checkState": false
+ },
+  {
+   "lineNum": "9호선",
+   "stationName": "송파나루",
    "checkState": false
  },
  {
@@ -2094,6 +2114,11 @@
    "stationName": "신방화",
    "checkState": false
  },
+   {
+   "lineNum": "9호선",
+   "stationName": "올림픽공원(한국체대)",
+   "checkState": false
+ },
  {
    "lineNum": "9호선",
    "stationName": "양천향교",
@@ -2124,9 +2149,20 @@
    "stationName": "증미",
    "checkState": false
  },
+  {
+   "lineNum": "9호선",
+   "stationName": "중앙보훈병원",
+   "checkState": false
+ },
+  {
+   "lineNum": "9호선",
+   "stationName": "한성백제",
+   "checkState": false
+ },
  {
    "lineNum": "9호선",
    "stationName": "흑석(중앙대입구)",
    "checkState": false
  }
+
 ]

@@ -72,7 +72,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {search: null, lineNum: "line", showDiv: true};
+        this.state = {search: null, lineNum: "line", showDiv: false};
 
         this.text = React.createRef();
         this.focusTextInput = this.focusTextInput.bind(this);
@@ -116,8 +116,8 @@ class App extends React.Component {
                             alignItems: "center"
                         }} onClick={() => {
                             this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
+                            this.setState({showDiv: true})
                         }}>
-
                             <text style={{
                                 alignmentBaseline: "center",
                                 position: 'relative',
@@ -141,12 +141,11 @@ class App extends React.Component {
                               ref={this.text}
                               placeholder={"지하철 단차 검색하기"}
                               onChange={(e) => this.searchSpace(e)}
-                              onClick={this.focusTextInput}
                     />
 
                 </RowAlign>
                 <Divider style={{width: "100%"}}/>
-                {items}
+                {/*{items}*/}
 
                 <Route path="/" exact render={(props) => (
                     <Home

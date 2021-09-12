@@ -10,12 +10,6 @@ import line1 from "../image/selected_line1.svg"
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 const NestedList = (props) => {
     const classes = useStyles();
     const danger_list = useSelector(state => state.danger.list);

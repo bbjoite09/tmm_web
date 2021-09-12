@@ -54,7 +54,7 @@ const NestedList = (props) => {
         for (var i = 0; i < tempDangerDB.length; i++) {
             // console.log(danger_list[i].stationName)
             if (tempDangerDB[i].lineNum == line) {
-                if (tempDangerDB[i].step == 1) {
+                if ((tempDangerDB[i].step == 1) || (tempDangerDB[i].gap == 1 || (tempDangerDB[i].gap == 2))) {
                     var stationName = tempDangerDB[i].stationName
                     dangerList = [...dangerList, stationName]
                 }
