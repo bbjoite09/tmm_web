@@ -48,21 +48,21 @@ export default function CallModal() {
                 }}
             >
                 <Fade in={open}>
-                    <div className={classes.paper} style={{width: "25%", height: "50%"}}>
+                    <div className={classes.paper} style={{width: "70%", height: "50%"}}>
                         <ColAlign>
                             <h3 id="transition-modal-title">헬프콜 서비스 전화로 요청하기</h3>
-                            <div style={{backgroundColor: "#F2F2F2", width: "105%", height: "60%", borderRadius: "20px"}}>
+                            <div style={{backgroundColor: "#F2F2F2", width: "105%", height: "90%", borderRadius: "20px"}}>
                                 <ColAlign>
-                                    <text id="transition-modal-description" style={{fontWeight: "bold", color: "#4378FF", fontSize: "12sp", marginBottom: "-20px"}}>요청역</text>
-                                    <text id="transition-modal-description" style={{fontWeight: "bolder", fontSize: "14px", marginBottom: "-30px"}}>신촌역 2호선</text>
+                                    <text id="transition-modal-description" style={{fontWeight: "bold", color: "#4378FF", fontSize: "12sp"}}>요청역</text>
+                                    <text id="transition-modal-description" style={{fontWeight: "bolder", fontSize: "14px"}}>신촌역 2호선</text>
                                     <text id="transition-modal-description" style={{fontSize: "14px"}}>02-111-1234</text>
-                                    <text id="transition-modal-description" style={{fontSize: "14px"}}>출발역 / 출발시간 / 요청역 / 탑승 위치를<br/>확인해주세요 :)</text>
+                                    <text id="transition-modal-description" style={{fontSize: "14px"}}>출발역 / 출발시간 / 요청역 / 탑승 위치를 확인해주세요 :)</text>
                                 </ColAlign>
                             </div>
                             <text id="transition-modal-description" style={{fontSize: "14px",marginTop: "20px"}}>전화걸기 버튼을 누르시면</text>
-                            <text id="transition-modal-description" style={{fontSize: "14px", marginBottom : "30px"}}>기본 전화 서비스로 연결됩니다.</text>
+                            <text id="transition-modal-description" style={{fontSize: "14px", marginBottom : "20px"}}>기본 전화 서비스로 연결됩니다.</text>
 
-                            <Button>요청하기</Button>
+                            <Button><a href={"TEL:261101331"} style={{textDecoration: "none", color: "white"}}>요청하기</a></Button>
                         </ColAlign>
                     </div>
                 </Fade>

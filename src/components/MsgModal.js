@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import styled from "styled-components";
 import msgButton from "../image/msgButton.svg"
+import stationList from "../station.json"
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -32,6 +33,17 @@ export default function MsgModal() {
         setOpen(false);
     };
 
+    // function getPhone(line, name) {
+    //     stationList.map((l) => {
+    //         if(l.stationName === name && l.lineNum === line){
+    //             return l.phone;
+    //         }
+    //     })
+    // }
+
+    // const phone = "sms:"+ getPhone(lineNum, name)+ "?body=출발역 / 출발시간 / 요청역 / 탑승 위치"
+
+
 
     return (
         <div>
@@ -49,7 +61,7 @@ export default function MsgModal() {
                 }}
             >
                 <Fade in={open}>
-                    <div className={classes.paper} style={{width: "25%", height: "50%"}}>
+                    <div className={classes.paper} style={{width: "70%", height: "50%"}}>
                         <ColAlign>
                             <h3 id="transition-modal-title">헬프콜 서비스 문자로 요청하기</h3>
                             <div style={{backgroundColor: "#F2F2F2", width: "105%", height: "90%", borderRadius: "20px"}}>
@@ -65,7 +77,7 @@ export default function MsgModal() {
                             <text id="transition-modal-description" style={{fontSize: "14px"}}>확인 전화가 올 수 있습니다.</text>
                             <text id="transition-modal-description" style={{fontSize: "14px", marginBottom : "20px"}}>기본 문자 서비스로 연결됩니다.</text>
 
-                            <Button><a href="sms:01099999999?body=출발역 / 출발시간 / 요청역 / 탑승 위치" style={{textDecoration: "none", color: "white"}}>요청하기</a></Button>
+                            <Button><a href={"sms:261101331?body=출발역 / 출발시간 / 요청역 / 탑승 위치"} style={{textDecoration: "none", color: "white"}}>요청하기</a></Button>
                         </ColAlign>
                     </div>
                 </Fade>

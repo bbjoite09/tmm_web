@@ -144,8 +144,6 @@ const Details = (props) => {
                                 </RowAlign>
                                 <Divider/>
                             </div>
-
-
                         </div>
 
                     );

@@ -23,57 +23,70 @@ const Home = (props) => {
 
     function getImage(line) {
         switch (line) {
-            case "1" : return mystation1;
-            case "2" : return mystation2;
-            case "3" : return mystation3;
-            case "4" : return mystation4;
-            case "5" : return mystation5;
-            case "6" : return mystation6;
-            case "7" : return mystation7;
-            case "8" : return mystation8;
-            case "9" : return mystation9;
+            case "1" :
+                return mystation1;
+            case "2" :
+                return mystation2;
+            case "3" :
+                return mystation3;
+            case "4" :
+                return mystation4;
+            case "5" :
+                return mystation5;
+            case "6" :
+                return mystation6;
+            case "7" :
+                return mystation7;
+            case "8" :
+                return mystation8;
+            case "9" :
+                return mystation9;
         }
     }
 
 
     return (
-        <RowAlign>
+        <ColAlign>
             {/* 좌측 - 틈 배너, 자주찾는 역*/}
-            <Box>
-                <img src={tmm_info} style={{marginLeft: "20%", width: "60%", marginTop: "5%"}}
-                     onClick={() => {
-                         props.history.push('/info')
-                     }}
-                />
-                <h3 style={{margin: "10% 0 5% 20%"}}>자주 찾는 역</h3>
-                <Divider style={{width: "60%", margin: "0 0 5% 20%", overflowX: "hidden", overflowY: "auto"}}/>
-                <MyStation>
+            {/*<Box>*/}
+
+            <h3 style={{margin: "10% 0 5% 0"}}>자주 찾는 역</h3>
+            <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
+
+            <MyStation>
 
 
-                    {myStationList.map((l, idx) => {
-                        if (l.checkState === true) {
-                            return (
-                                <ColAlign>
-                                    <img src={getImage(l.lineNum[0])} style={{width: "50dp"}}  onClick={() => {props.history.push("/details="+ l.lineNum[0] +l.stationName)}}/>
-                                    <text style={{fontSize: "0.9375em"}}>{l.stationName}</text>
-                                </ColAlign>
-                            )
-                        }
+                {myStationList.map((l, idx) => {
+                    if (l.checkState === true) {
+                        return (
+                            <ColAlign2>
+                                <img src={getImage(l.lineNum[0])} style={{width: "50dp"}} onClick={() => {
+                                    props.history.push("/details=" + l.lineNum[0] + l.stationName)
+                                }}/>
+                                <text style={{fontSize: "0.9375em"}}>{l.stationName}</text>
+                            </ColAlign2>
+                        )
+                    }
 
-                    })}
+                })}
 
 
-                </MyStation>
+            </MyStation>
+            <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
+                 onClick={() => {
+                     props.history.push('/info')
+                 }}
+            />
 
-            </Box>
+            {/*</Box>*/}
 
             {/* 우측 - 단차 위험 호선*/}
-            <Box style={{background: "white"}}>
-                <h3 style={{margin: "5% 0 0 3%"}}>단차 위험 호선</h3>
-                <NestedList {...props}/>
+            {/*<Box style={{background: "white"}}>*/}
+            <h3 style={{margin: "5% 0 0 3%"}}>단차 위험 호선</h3>
+            <NestedList {...props}/>
 
-            </Box>
-        </RowAlign>
+            {/*</Box>*/}
+        </ColAlign>
     )
 };
 
@@ -85,6 +98,15 @@ const ColAlign = styled.div`
 
 `;
 
+const ColAlign2 = styled.div`
+    width: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 3% 3% 3%;
+
+`;
+
 const RowAlign = styled.div`
     width: 100%;
     display: flex;
@@ -93,7 +115,7 @@ const RowAlign = styled.div`
 `;
 
 const MyStation = styled.div`
-    width: 60%;
+    width: 100%;
     height: 40%;
     display: flex;
     flex-direction: row;
