@@ -33,7 +33,6 @@ import station from "../station.json"
 
 const NestedList = (props) => {
     const classes = useStyles();
-    const danger_list = useSelector(state => state.danger.list);
     const [open, setOpen] = React.useState(true);
 
     const [expanded, setExpanded] = React.useState(false);
