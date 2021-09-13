@@ -54,8 +54,6 @@ const Home = (props) => {
             <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
 
             <MyStation>
-
-
                 {myStationList.map((l, idx) => {
                     if (l.checkState === true) {
                         return (
@@ -67,22 +65,21 @@ const Home = (props) => {
                             </ColAlign2>
                         )
                     }
-
                 })}
-
-
             </MyStation>
+
             <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
                  onClick={() => {
                      props.history.push('/info')
                  }}
             />
+            <br/><br/>
 
             {/*</Box>*/}
 
             {/* 우측 - 단차 위험 호선*/}
             {/*<Box style={{background: "white"}}>*/}
-            <h3 style={{margin: "5% 0 0 3%"}}>단차 위험 호선</h3>
+            <h3 style={{margin: "5% 0 0 3%", justifyContent: "flex-start"}}>단차 위험 호선</h3>
             <NestedList {...props}/>
 
             {/*</Box>*/}

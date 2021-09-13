@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
+import {withRouter} from "react-router";
 
 // image resource
 import selected1 from "./image/selected_line1.svg"
@@ -52,6 +53,19 @@ const Details = (props) => {
         })
         return tempIdx;
     }
+
+    function phoneForSub(name_, line_) {
+        let phone = "전화번호 정보 없음";
+        stationDB.map((l, idx) => {
+            if ((l.stationName === name_) && (l.lineNum === line_)) {
+                phone = l.phone;
+            }
+        })
+        return phone;
+    }
+
+    const phone = phoneForSub(name, lineNum)
+    // console.log(phone)
 
     const nowIdx = index(name, line)
 
@@ -154,8 +168,16 @@ const Details = (props) => {
             <div>
                 <h3>헬프콜 서비스</h3>
                 <p>역무원에게 안전발판을 요청할 수 있는 서비스입니다.</p>
-                <MsgModal/>
-                <CallModal/>
+                <MsgModal
+                    name={name}
+                    line={line}
+                    phone={phone}
+                />
+                <CallModal
+                    name={name}
+                    line={line}
+                    phone={phone}
+                />
             </div>
         </div>
 
@@ -176,4 +198,4 @@ const RowAlign = styled.div`
     flex-direction: row;
 `;
 
-export default Details;
+export default withRouter(Details);
