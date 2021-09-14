@@ -4,6 +4,8 @@ import dangerData from "../../dangerData"
 // Actions
 const LOAD = "danger/LOAD";
 const UPDATE = "danger/UPDATE";
+const MYSTATE = "danger/MYSTATE"
+const SAFESTATE = "danger/SAFESTATE"
 
 // initialState
 const initialState = {
@@ -11,6 +13,8 @@ const initialState = {
     list: dangerData,
     myStationList: myStation,
     is_loaded: false,
+    isMystationState: false,
+    safeState: true,
 };
 
 //Action Creators
@@ -20,7 +24,12 @@ export const loadDanger = (danger) => {
 export const updateCheck = (name, line) => {
     return {type: UPDATE, name, line};
 }
-
+export const myStateCheck = (state) => {
+    return {type: MYSTATE, state}
+}
+export const safeCheck = (state) => {
+    return {type: SAFESTATE, state}
+}
 
 
 // Reducer
@@ -45,6 +54,14 @@ export default function reducer(state = initialState, action = {}) {
             });
 
             return {myStationList: myList};
+        }
+
+        case "danger/MYSTATE": {
+            return {...state, isMystationState: action.state}
+        }
+
+        case "danger/SAFESTATE": {
+            return {...state, safeState: action.state}
         }
 
         default:

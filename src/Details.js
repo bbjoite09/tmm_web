@@ -28,12 +28,14 @@ import Divider from '@material-ui/core/Divider';
 // components
 import MsgModal from "./components/MsgModal";
 import CallModal from "./components/CallModal";
-import {updateCheck} from "./redux/modules/danger";
+import {safeCheck, updateCheck} from "./redux/modules/danger";
 import stationDB from "./station.json"
 
 const Details = (props) => {
-    const dispatch = useDispatch();
+    const dispatch1 = useDispatch();
+    const dispatch2 = useDispatch();
     const myStationList = useSelector((state) => state.danger.myStationList);
+    const safeState = useSelector((state) => state.danger.safeState);
     const stationList = [...stationDB]
 
     const NumName = props.match.params.index;
@@ -119,44 +121,75 @@ const Details = (props) => {
         }
     }
 
+    function safeCheckFun(state) {
+        if (state === true) {
+            return safe;
+        }
+        else {
+            return null;
+        }
+    }
+
     return (
         <div
-            style={{marginTop: "5%",width: "100%", position: "absolute", left: "50%", transform: "translate(-50%, 0)"}}>
+            style={{
+                marginTop: "5%",
+                width: "100%",
+                position: "absolute",
+                left: "50%",
+                transform: "translate(-50%, 0)"
+            }}>
             <RowAlign style={{marginLeft: "3%"}}>
 
                 <img src={getImage(line[0])} style={{margin: "1% 3% 1% 0"}}/>
                 <img style={{margin: "1% 0 1% 0"}}
                      onClick={() => {
-                         dispatch(updateCheck(name, line))
+                         dispatch1(updateCheck(name, line))
                      }}
                      src={myStationList[nowIdx].checkState ? checked : unchecked}
                 />
             </RowAlign>
+
             <h1 style={{marginLeft: "3%"}}>{line} {name}</h1>
+            <img src={safeCheckFun(safeState)} style={{width: "100%"}}/>
+
 
             {stationList.map((l, i) => {
                 if ((l.stationName === name) && (l.lineNum === lineNum)) {
+                    dispatch2(safeCheck(false))
+
                     return (
                         <div>
-                            <RowAlign style={{height: "160px", justifyContent: "space-evenly", alignItems: "center", backgroundColor: "#F5F5F5"}}>
+                            <RowAlign style={{
+                                height: "160px",
+                                justifyContent: "space-evenly",
+                                alignItems: "center",
+                                backgroundColor: "#F8F8F8"
+                            }}>
                                 <ColAlign>
                                     <img src={getGapImg(l.gap)} style={{width: "50px", marginRight: "5%"}}/>
-                                    <p style={{textAlign: "center"}}>연단거리<br/><span style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span></p>
+                                    <p style={{textAlign: "center"}}>연단거리<br/><span
+                                        style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span></p>
                                 </ColAlign>
                                 <ColAlign>
                                     <img src={l.step ? yes : no} style={{width: "50px", marginRight: "5%"}}/>
-                                    <p style={{textAlign: "center"}}>단차<br/><span style={{color: "red", fontWeight: "bold"}}>{l.step ? "있음" : "없음"}</span></p>
+                                    <p style={{textAlign: "center"}}>단차<br/><span
+                                        style={{color: "red", fontWeight: "bold"}}>{l.step ? "있음" : "없음"}</span></p>
 
                                 </ColAlign>
                                 <ColAlign>
-                                    <img src={(l.ramp == 1)? service : noService} style={{width: "50px"}}/>
-                                    <p style={{textAlign: "center"}}>안전발판<br/>{(l.ramp == 1)? "서비스 제공" : "서비스 미제공"}</p>
+                                    <img src={(l.ramp == 1) ? service : noService} style={{
+                                        width: "5" +
+                                            "0px"
+                                    }}/>
+                                    <p style={{textAlign: "center"}}>안전발판<br/>{(l.ramp == 1) ? "서비스 제공" : "서비스 미제공"}</p>
                                 </ColAlign>
                             </RowAlign>
                             <br/>
                             <div>
-                                <h3  style={{marginLeft: "3%"}}>정보</h3>
-                                <p  style={{marginLeft: "3%"}}><span style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span>으로 지정된
+                                <h3 style={{marginLeft: "3%"}}>정보</h3>
+                                <p style={{marginLeft: "3%"}}><span
+                                    style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span>으로 지정된
                                     역입니다.</p>
                                 <Divider/>
                                 <RowAlign>
@@ -177,6 +210,7 @@ const Details = (props) => {
                 }
             })
             }
+
             <br/>
 
             <h3 style={{marginLeft: "3%"}}>헬프콜 서비스</h3>

@@ -89,7 +89,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {search: null, lineNum: "line", showDiv: false};
+        this.state = {search: null, lineNum: "line", showDiv: false, isMystation: false};
 
         this.text = React.createRef();
         this.focusTextInput = this.focusTextInput.bind(this);
@@ -136,10 +136,6 @@ class App extends React.Component {
                                 <img src={getImage(data.lineNum)} style={{width: "10%", marginLeft: "5%"}}/>
                                 <p style={{ marginLeft: "3%",}}>{data.stationName}</p>
                             </RowAlign>
-
-
-
-
                         </div>
                         <Divider/>
                     </div>
@@ -188,9 +184,9 @@ const RowAlign = styled.div`
 `;
 
 const InputBox = styled.input`
-    width: 40%;
+    width: 60%;
     height: 44px;
-    margin-left: 25px;
+    margin: 0 0 1% 25px;
     background-color: #F2F2F2;
     border-radius: 10px;
     border: 0;
@@ -204,14 +200,6 @@ const InputBox = styled.input`
         solid
         #dadbdb;
     }
-`;
-
-const NoneImg = styled.img`
-    width: 40%;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 `;
 
 

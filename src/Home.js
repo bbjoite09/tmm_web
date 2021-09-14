@@ -5,6 +5,9 @@ import NestedList from "./components/NestedList";
 import ControlledAccordions from "./components/ControlledAccordions"
 import Divider from '@material-ui/core/Divider';
 import {withRouter} from "react-router";
+import {useSelector, useDispatch} from "react-redux";
+import {myStateCheck} from "./redux/modules/danger";
+
 
 import mystation1 from "./image/mystation_1.svg"
 import mystation2 from "./image/mystation_2.svg"
@@ -15,11 +18,14 @@ import mystation6 from "./image/mystation_6.svg"
 import mystation7 from "./image/mystation_7.svg"
 import mystation8 from "./image/mystation_8.svg"
 import mystation9 from "./image/mystation_9.svg"
+import mystationNone from "./image/mystation_none.svg"
 
-import {useSelector, useDispatch} from "react-redux";
+
 
 const Home = (props) => {
     const myStationList = useSelector(state => state.danger.myStationList);
+    const nowMyStationState = useSelector(state => state.danger.isMystationState);
+    const dispatch = useDispatch();
 
     function getImage(line) {
         switch (line) {
@@ -47,20 +53,18 @@ const Home = (props) => {
 
     return (
         <div style={{width: "100%"}}>
-            <h3 style={{margin: "10% 0 5% 3%"}}>자주 찾는 역</h3>
-            <ColAlign style={{}}>
-                {/* 좌측 - 틈 배너, 자주찾는 역*/}
-                {/*<Box>*/}
-
-
-                <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
+            <h3 style={{margin: "5% 0 5% 3%"}}>자주 찾는 역</h3>
+            <ColAlign>
+                <Divider style={{width: "100%", margin: "0 0 3% 0"}}/>
+                <img src={nowMyStationState ? null: mystationNone} style={{width: "100%"}}/>
 
                 <MyStation>
                     {myStationList.map((l, idx) => {
                         if (l.checkState === true) {
+                            dispatch(myStateCheck(true))
                             return (
                                 <ColAlign2>
-                                    <img src={getImage(l.lineNum[0])} style={{width: "50dp"}} onClick={() => {
+                                    <img src={getImage(l.lineNum[0])} style={{width: "50dp", marginTop: "15%"}} onClick={() => {
                                         props.history.push("/details=" + l.lineNum[0] + l.stationName)
                                     }}/>
                                     <text style={{fontSize: "0.9375em", textAlign: "center"}}>{l.stationName}</text>
@@ -69,7 +73,8 @@ const Home = (props) => {
                         }
                     })}
                 </MyStation>
-                <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
+
+                <Divider style={{width: "100%", margin: "0 0 5% 0"}}/>
 
                 <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
                      onClick={() => {
