@@ -47,7 +47,7 @@ const CallModal = (props) => {
                     timeout: 500,
                 }}
             >
-                <Fade in={open}>
+                <Fade in={open} style={{borderRadius: "5%", border: "0"}}>
                     <div className={classes.paper} style={{width: "70%", height: "50%"}}>
                         <ColAlign>
                             <h3 id="transition-modal-title">헬프콜 서비스 전화로 요청하기</h3>
@@ -60,7 +60,7 @@ const CallModal = (props) => {
                             }}>
                                 <ColAlign>
                                     <text id="transition-modal-description"
-                                          style={{fontWeight: "bolder", color: "#4378FF", fontSize: "12sp"}}>요청역
+                                          style={{fontWeight: "bolder", color: "#4378FF"}}>요청역
                                     </text>
                                     <text id="transition-modal-description"
                                           style={{fontSize: "14px", textAlign: "center"}}>
@@ -78,7 +78,13 @@ const CallModal = (props) => {
                                 전화 서비스로 연결됩니다.
                             </text>
 
-                            <Button><a href={"TEL:"+ props.phone} style={{textDecoration: "none", color: "white"}}>요청하기</a></Button>
+                            <A href={"TEL:" + props.phone} style={{
+                                textDecoration: "none",
+                                color: "white",
+                                width: "105%",
+                                height: "23%",
+                                fontSize: "12sp"
+                            }}>요청하기</A>
                         </ColAlign>
                     </div>
                 </Fade>
@@ -96,15 +102,17 @@ const ColAlign = styled.div`
 `;
 
 
-const Button = styled.button`
+const A = styled.a`
     width: 105%;
-    height: 15%;
-    border: 0;
+    height: 60px;
+    line-height: 60px;
     background: #4378FF;
-    box-shadow: 0px 0px 11px rgba(175, 175, 175, 0.25);
+    text-decoration: none;
     border-radius: 27px;
     color: white;
     font-weight: bold;
+    text-align: center;
 `;
+
 
 export default CallModal;
