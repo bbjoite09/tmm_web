@@ -102,7 +102,7 @@ const Details = (props) => {
                 return veryDanger;
 
             default :
-                return good;
+                return veryDanger;
         }
     }
 
@@ -114,45 +114,58 @@ const Details = (props) => {
                 return "다소위험";
             case 3:
                 return "매우위험";
+            default:
+                return "정보 없음";
         }
     }
 
     return (
-        <div style={{position: "absolute", left: "50%", transform: "translate(-50%, 0)"}}>
-            <RowAlign>
-                <h1 style={{marginRight: "3%"}}>{line} {name}</h1>
-                <img src={getImage(line[0])} style={{margin: "1% 3% 1% 0"}}/>
+        <div
+            style={{marginTop: "5%",width: "100%", position: "absolute", left: "50%", transform: "translate(-50%, 0)"}}>
+            <RowAlign style={{marginLeft: "3%"}}>
 
-                <img style={{margin: "1% 1% 1% 0"}}
+                <img src={getImage(line[0])} style={{margin: "1% 3% 1% 0"}}/>
+                <img style={{margin: "1% 0 1% 0"}}
                      onClick={() => {
                          dispatch(updateCheck(name, line))
                      }}
                      src={myStationList[nowIdx].checkState ? checked : unchecked}
                 />
             </RowAlign>
+            <h1 style={{marginLeft: "3%"}}>{line} {name}</h1>
 
             {stationList.map((l, i) => {
                 if ((l.stationName === name) && (l.lineNum === lineNum)) {
                     return (
                         <div>
-                            <RowAlign>
-                                <img src={getGapImg(l.gap)} style={{width: "50px", marginRight: "5%"}}/>
-                                <img src={l.step ? yes : no} style={{width: "50px", marginRight: "5%"}}/>
-                                <img src={l.ramp ? service : noService} style={{width: "50px"}}/>
+                            <RowAlign style={{height: "160px", justifyContent: "space-evenly", alignItems: "center", backgroundColor: "#F5F5F5"}}>
+                                <ColAlign>
+                                    <img src={getGapImg(l.gap)} style={{width: "50px", marginRight: "5%"}}/>
+                                    <p style={{textAlign: "center"}}>연단거리<br/><span style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span></p>
+                                </ColAlign>
+                                <ColAlign>
+                                    <img src={l.step ? yes : no} style={{width: "50px", marginRight: "5%"}}/>
+                                    <p style={{textAlign: "center"}}>단차<br/><span style={{color: "red", fontWeight: "bold"}}>{l.step ? "있음" : "없음"}</span></p>
+
+                                </ColAlign>
+                                <ColAlign>
+                                    <img src={(l.ramp == 1)? service : noService} style={{width: "50px"}}/>
+                                    <p style={{textAlign: "center"}}>안전발판<br/>{(l.ramp == 1)? "서비스 제공" : "서비스 미제공"}</p>
+                                </ColAlign>
                             </RowAlign>
                             <br/>
                             <div>
-                                <h3>정보</h3>
-                                <p><span style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span>으로 지정된
+                                <h3  style={{marginLeft: "3%"}}>정보</h3>
+                                <p  style={{marginLeft: "3%"}}><span style={{color: "red", fontWeight: "bold"}}>{getGapText(l.gap)}</span>으로 지정된
                                     역입니다.</p>
                                 <Divider/>
                                 <RowAlign>
-                                    <p style={{marginRight: "15%"}}><b>안전승강장</b></p>
+                                    <p style={{marginLeft: "3%", marginRight: "14%"}}><b>안전승강장</b></p>
                                     <p style={{marginRight: "3%"}}>상행 {l.dir1Position}</p>
                                     <p>하행 {l.dir2Position}</p>
                                 </RowAlign>
                                 <RowAlign>
-                                    <p style={{marginRight: "10%"}}><b>교통약자 탑승</b></p>
+                                    <p style={{marginLeft: "3%", marginRight: "10%"}}><b>교통약자 탑승</b></p>
                                     <p>{l.accessPosition}</p>
 
                                 </RowAlign>
@@ -165,9 +178,10 @@ const Details = (props) => {
             })
             }
             <br/>
-            <div>
-                <h3>헬프콜 서비스</h3>
-                <p>역무원에게 안전발판을 요청할 수 있는 서비스입니다.</p>
+
+            <h3 style={{marginLeft: "3%"}}>헬프콜 서비스</h3>
+            <p style={{marginLeft: "3%"}}>역무원에게 안전발판을 요청할 수 있는 서비스입니다.</p>
+            <ColAlign style={{justifyContent: "center", backgroundColor: "#F5F5F5"}}>
                 <MsgModal
                     name={name}
                     line={line}
@@ -178,7 +192,7 @@ const Details = (props) => {
                     line={line}
                     phone={phone}
                 />
-            </div>
+            </ColAlign>
         </div>
 
     )
@@ -192,7 +206,6 @@ const ColAlign = styled.div`
 `;
 
 const RowAlign = styled.div`
-    width:100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
