@@ -123,7 +123,7 @@ const Details = (props) => {
         <div
             style={{marginTop: "5%",width: "100%", position: "absolute", left: "50%", transform: "translate(-50%, 0)"}}>
             <RowAlign style={{marginLeft: "3%"}}>
-                <h1 style={{marginRight: "3%"}}>{line} {name}</h1>
+
                 <img src={getImage(line[0])} style={{margin: "1% 3% 1% 0"}}/>
                 <img style={{margin: "1% 0 1% 0"}}
                      onClick={() => {
@@ -132,6 +132,7 @@ const Details = (props) => {
                      src={myStationList[nowIdx].checkState ? checked : unchecked}
                 />
             </RowAlign>
+            <h1 style={{marginLeft: "3%"}}>{line} {name}</h1>
 
             {stationList.map((l, i) => {
                 if ((l.stationName === name) && (l.lineNum === lineNum)) {
