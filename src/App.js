@@ -152,7 +152,7 @@ class App extends React.Component {
             <div className="App">
                 <RowAlign style={{marginTop: "2%", marginBottom: "1%"}}>
                     <Link to={"/"}>
-                        <img style={{marginTop: "3px", width: "130px"}} src={logo}/></Link>
+                        <img style={{marginTop: "5px", width: "100px"}} src={logo}/></Link>
                     <InputBox type="text"
                               ref={this.text}
                               placeholder={"지하철 단차 검색하기"}
