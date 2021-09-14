@@ -126,7 +126,6 @@ class App extends React.Component {
                 return (
                     <div>
                         <div style={{
-                            width: "100%",
                             height: "41px",
                             display: "flex",
                             alignItems: "center"

@@ -76,7 +76,7 @@ const NestedList = (props) => {
     const dangerNameList9 = dangerStation(9)
 
     return (
-        <div className={classes.root} style={{margin: "5% 0 0 0", width: "100%"}}>
+        <div className={classes.root} style={{margin: "5% 0 0 0"}}>
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon/>}

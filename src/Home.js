@@ -46,44 +46,49 @@ const Home = (props) => {
 
 
     return (
-        <ColAlign>
-            {/* 좌측 - 틈 배너, 자주찾는 역*/}
-            {/*<Box>*/}
+        <div style={{width: "100%"}}>
+            <h3 style={{margin: "10% 0 5% 3%"}}>자주 찾는 역</h3>
+            <ColAlign style={{}}>
+                {/* 좌측 - 틈 배너, 자주찾는 역*/}
+                {/*<Box>*/}
 
-            <h3 style={{margin: "10% 0 5% 0"}}>자주 찾는 역</h3>
-            <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
 
-            <MyStation>
-                {myStationList.map((l, idx) => {
-                    if (l.checkState === true) {
-                        return (
-                            <ColAlign2>
-                                <img src={getImage(l.lineNum[0])} style={{width: "50dp"}} onClick={() => {
-                                    props.history.push("/details=" + l.lineNum[0] + l.stationName)
-                                }}/>
-                                <text style={{fontSize: "0.9375em"}}>{l.stationName}</text>
-                            </ColAlign2>
-                        )
-                    }
-                })}
-            </MyStation>
+                <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
 
-            <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
-                 onClick={() => {
-                     props.history.push('/info')
-                 }}
-            />
-            <br/><br/>
+                <MyStation>
+                    {myStationList.map((l, idx) => {
+                        if (l.checkState === true) {
+                            return (
+                                <ColAlign2>
+                                    <img src={getImage(l.lineNum[0])} style={{width: "50dp"}} onClick={() => {
+                                        props.history.push("/details=" + l.lineNum[0] + l.stationName)
+                                    }}/>
+                                    <text style={{fontSize: "0.9375em", textAlign: "center"}}>{l.stationName}</text>
+                                </ColAlign2>
+                            )
+                        }
+                    })}
+                </MyStation>
+                <Divider style={{width: "100%", margin: "0 0 5% 0", overflowX: "hidden", overflowY: "auto"}}/>
 
-            {/*</Box>*/}
+                <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
+                     onClick={() => {
+                         props.history.push('/info')
+                     }}
+                />
+                <br/><br/>
 
-            {/* 우측 - 단차 위험 호선*/}
-            {/*<Box style={{background: "white"}}>*/}
+                {/*</Box>*/}
+
+                {/* 우측 - 단차 위험 호선*/}
+                {/*<Box style={{background: "white"}}>*/}
+
+                {/*</Box>*/}
+            </ColAlign>
             <h3 style={{margin: "5% 0 0 3%", justifyContent: "flex-start"}}>단차 위험 호선</h3>
-            <NestedList {...props}/>
+                <NestedList {...props}/>
 
-            {/*</Box>*/}
-        </ColAlign>
+        </div>
     )
 };
 
