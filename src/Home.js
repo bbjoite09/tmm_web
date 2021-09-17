@@ -74,7 +74,7 @@ const Home = (props) => {
                     })}
                 </MyStation>
 
-                <Divider style={{width: "100%", margin: "0 0 5% 0"}}/>
+                <Divider style={{width: "100%", margin: "1% 0 5% 0"}}/>
 
                 <img src={tmm_info} style={{width: "100%", marginTop: "5%"}}
                      onClick={() => {
