@@ -133,7 +133,7 @@ class App extends React.Component {
                             this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
                         }}>
                             <RowAlign style={{width: "50%", justifyContent: "flex-start", alignItems: "center"}}>
-                                <img src={getImage(data.lineNum)} style={{width: "10%", marginLeft: "5%"}}/>
+                                <img src={getImage(data.lineNum)} style={{width: "25px", marginLeft: "5%"}}/>
                                 <p style={{ marginLeft: "3%",}}>{data.stationName}</p>
                             </RowAlign>
                         </div>
