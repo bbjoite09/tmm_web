@@ -111,7 +111,7 @@ const Details = (props) => {
     function getGapText(now) {
         switch (now) {
             case 1 :
-                return "주의필요함";
+                return "양호";
             case 2:
                 return "다소위험";
             case 3:

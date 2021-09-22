@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {withRouter} from "react-router";
 import {Route, Link} from "react-router-dom";
 import {connect} from 'react-redux';
@@ -17,6 +17,7 @@ import {loadDanger} from "./redux/modules/danger";
 
 import name_list from "./mystation.json"
 import * as Hangul from 'hangul-js';
+import stationDB from "./station.json"
 
 // image
 import selected1 from "./image/selected_line1.svg"
@@ -46,12 +47,22 @@ const mapDispatchToProps = (dispatch) => {
 
 };
 
+
 const search_list = [...name_list];
 // console.log(search_list[0])
 
 
 // object에 초성필드 dissembled 추가
-search_list.forEach(function (item) {
+// search_list.forEach(function (item) {
+//     var dis = Hangul.disassemble(item.stationName, true);
+//     var cho = dis.reduce(function (prev, elem) {
+//         elem = elem[0] ? elem[0] : elem;
+//         return prev + elem;
+//     }, "");
+//     item.diassembled = cho;
+// });
+
+stationDB.forEach(function (item) {
     var dis = Hangul.disassemble(item.stationName, true);
     var cho = dis.reduce(function (prev, elem) {
         elem = elem[0] ? elem[0] : elem;
@@ -62,25 +73,50 @@ search_list.forEach(function (item) {
 
 // console.log(search_list);
 
+// 이미지 반환 함수 (모든역)
+// function getImage(line) {
+//     switch (line) {
+//         case "1호선" :
+//             return selected1;
+//         case "2호선" :
+//             return selected2;
+//         case "3호선" :
+//             return selected3;
+//         case "4호선" :
+//             return selected4;
+//         case "5호선" :
+//             return selected5;
+//         case "6호선" :
+//             return selected6;
+//         case "7호선" :
+//             return selected7;
+//         case "8호선" :
+//             return selected8;
+//         case "9호선" :
+//             return selected9;
+//     }
+// }
+
+//이미지 반환 함수 (stationDB 에 있는 역만)
 function getImage(line) {
     switch (line) {
-        case "1호선" :
+        case 1 :
             return selected1;
-        case "2호선" :
+        case 2 :
             return selected2;
-        case "3호선" :
+        case 3 :
             return selected3;
-        case "4호선" :
+        case 4 :
             return selected4;
-        case "5호선" :
+        case 5 :
             return selected5;
-        case "6호선" :
+        case 6 :
             return selected6;
-        case "7호선" :
+        case 7 :
             return selected7;
-        case "8호선" :
+        case 8 :
             return selected8;
-        case "9호선" :
+        case 9 :
             return selected9;
     }
 }
@@ -111,7 +147,8 @@ class App extends React.Component {
 
 
     render() {
-        const items = search_list.filter((data) => {
+        // const items = search_list.filter((data) => {
+        const items = stationDB.filter((data) => {
             var str = ""
             if (this.state.search == null) {
                 return
@@ -130,11 +167,12 @@ class App extends React.Component {
                             display: "flex",
                             alignItems: "center"
                         }} onClick={() => {
-                            this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
+                            // this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
+                            this.props.history.push('/details=' + data.lineNum + data.stationName)
                         }}>
                             <RowAlign style={{width: "50%", justifyContent: "flex-start", alignItems: "center"}}>
                                 <img src={getImage(data.lineNum)} style={{width: "25px", marginLeft: "5%"}}/>
-                                <p style={{ marginLeft: "3%",}}>{data.stationName}</p>
+                                <p style={{marginLeft: "3%"}}>{data.stationName}</p>
                             </RowAlign>
                         </div>
                         <Divider/>
