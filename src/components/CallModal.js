@@ -78,13 +78,7 @@ const CallModal = (props) => {
                                 전화 서비스로 연결됩니다.
                             </text>
 
-                            <A href={"TEL:" + props.phone} style={{
-                                textDecoration: "none",
-                                color: "white",
-                                width: "105%",
-                                height: "23%",
-                                fontSize: "12sp"
-                            }}>요청하기</A>
+                            <A href={"TEL:" + props.phone} >요청하기</A>
                         </ColAlign>
                     </div>
                 </Fade>

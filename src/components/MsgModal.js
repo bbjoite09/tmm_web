@@ -42,6 +42,7 @@ const MsgModal = (props) => {
     // }
 
     // const phone = "sms:"+ getPhone(lineNum, name)+ "?body=출발역 / 출발시간 / 요청역 / 탑승 위치"
+    const phone = "sms:"+ props.phone + "?body=출발역 / 출발시간 / 요청역 / 탑승 위치"
 
     function checkMobile() {
         var varUA = navigator.userAgent.toLowerCase();
@@ -56,8 +57,7 @@ const MsgModal = (props) => {
     }
 
     function nowHref(phone_) {
-        phone_ = phone_.split('-').join("")
-        const href = 'sms:' + phone_ + (checkMobile() === 'ios' ? '&' : '?') + 'body=' + "출발역 / 출발시간 / 요청역 / 탑승 위치"
+        const href = 'sms:0215771234' + (checkMobile() === 'ios' ? '&' : '?') + 'body=' + props.name + " / 출발시간 / 요청역 / 탑승 위치"
         return href;
     }
 
@@ -94,7 +94,7 @@ const MsgModal = (props) => {
                                     </text>
                                     <text id="transition-modal-description"
                                           style={{fontSize: "14px", textAlign: "center"}}>
-                                        <b>{props.name} {props.line}</b><br/>{props.phone}</text>
+                                        <b>{props.name} {props.line}</b><br/><br/>서울교통공사<br/>02-1577-1234</text>
                                     <text id="transition-modal-description"
                                           style={{fontWeight: "bolder", color: "#4378FF", fontSize: "12sp"}}>보낼내용
                                     </text>
