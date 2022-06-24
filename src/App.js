@@ -17,6 +17,7 @@ import { loadDanger } from "./redux/modules/danger";
 import name_list from "./mystation.json";
 import * as Hangul from "hangul-js";
 import stationDB from "./station.json";
+import allStationDB from "./allStation.json";
 
 // image
 import selected1 from "./image/selected_line1.svg";
@@ -57,7 +58,7 @@ const search_list = [...name_list];
 //     item.diassembled = cho;
 // });
 
-stationDB.forEach(function (item) {
+allStationDB.forEach(function (item) {
   var dis = Hangul.disassemble(item.stationName, true);
   var cho = dis.reduce(function (prev, elem) {
     elem = elem[0] ? elem[0] : elem;
@@ -152,7 +153,7 @@ class App extends React.Component {
 
   render() {
     // const items = search_list.filter((data) => {
-    const items = stationDB
+    const items = allStationDB
       .filter((data) => {
         var str = "";
         if (this.state.search == null) {
@@ -161,7 +162,8 @@ class App extends React.Component {
           data.stationName.includes(this.text.current.value) ||
           data.diassembled.includes(
             Hangul.disassemble(this.text.current.value).join("")
-          )
+          ) ||
+          data.stationNameE.includes(this.text.current.value)
         ) {
           return data;
         } else if (this.state.search === "") {
@@ -181,9 +183,11 @@ class App extends React.Component {
                 // this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
                 this.setState({ isSelect: false, isSearch: true });
                 this.text.current.value = "";
-                this.props.history.push(
-                  "/details=" + data.lineNum + data.stationName
-                );
+                stationDB.stationName == this.state.search
+                  ? this.props.history.push(
+                      "/details=" + data.lineNum + data.stationName
+                    )
+                  : this.props.history.push("/searchNone");
               }}
             >
               <RowAlign
@@ -240,9 +244,10 @@ class App extends React.Component {
             )}
           />
 
-          <Route path="/searchNone" component={None} />
           <Route path="/info" component={TmmInfo} />
+
           <Route path="/details=:index" component={Details} />
+          <Route path="/searchNone" component={None} />
         </div>
       </div>
     );

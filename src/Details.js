@@ -220,17 +220,22 @@ const Details = (props) => {
                   </p>
                   <Divider />
                   <RowAlign>
-                    <p style={{ marginLeft: "3%", marginRight: "14%" }}>
+                    <p
+                      style={{
+                        marginLeft: "3%",
+                        width: "25%",
+                      }}
+                    >
                       <b>안전승강장</b>
                     </p>
                     <p style={{ marginRight: "3%" }}>상행 {l.dir1Position}</p>
                     <p>하행 {l.dir2Position}</p>
                   </RowAlign>
                   <RowAlign>
-                    <p style={{ marginLeft: "3%", marginRight: "10%" }}>
+                    <p style={{ marginLeft: "3%", width: "25%" }}>
                       <b>교통약자 탑승</b>
                     </p>
-                    <p>{l.accessPosition}</p>
+                    <p style={{ width: "75%" }}>{l.accessPosition}</p>
                   </RowAlign>
                   <Divider />
                 </div>
