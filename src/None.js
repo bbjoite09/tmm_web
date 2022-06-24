@@ -1,22 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import noneImg from "./image/noneImg.svg"
+import noneImg from "./image/noneImg.svg";
 
 const None = () => {
-    return(
-        <div>
-          <NoneImg src={noneImg}/>
-        </div>
-
-    )
-}
+  return (
+    <div
+      style={{
+        backgroundColor: "#f2f2f2",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "500px",
+          margin: "0 auto",
+          backgroundColor: "white",
+          height: "90vh",
+        }}
+      >
+        <NoneImg src={noneImg} />
+      </div>
+    </div>
+  );
+};
 
 const NoneImg = styled.img`
-    width: 40%;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 70%;
 `;
 
 export default None;
