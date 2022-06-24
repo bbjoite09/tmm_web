@@ -126,6 +126,8 @@ class App extends React.Component {
       lineNum: "line",
       showDiv: false,
       isMystation: false,
+      isSelect: false,
+      isSearch: false,
     };
 
     this.text = React.createRef();
@@ -134,11 +136,13 @@ class App extends React.Component {
 
   focusTextInput() {
     this.text.current.focus();
+    this.setState({ isSelect: true });
     <items />;
   }
 
   searchSpace = (event) => {
     let keyword = event.target.value;
+    this.setState({ isSelect: true });
     this.setState({ search: keyword });
   };
 
@@ -175,6 +179,8 @@ class App extends React.Component {
               }}
               onClick={() => {
                 // this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
+                this.setState({ isSelect: false, isSearch: true });
+                this.text.current.value = "";
                 this.props.history.push(
                   "/details=" + data.lineNum + data.stationName
                 );
@@ -221,7 +227,7 @@ class App extends React.Component {
             />
           </RowAlign>
           <Divider style={{ width: "100%" }} />
-          {items}
+          {this.state.isSelect ? items : null}
 
           <Route
             path="/"
