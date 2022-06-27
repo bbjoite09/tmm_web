@@ -118,9 +118,9 @@ const Details = (props) => {
       case 1:
         return "양호";
       case 2:
-        return "다소위험";
+        return "다소 위험";
       case 3:
-        return "매우위험";
+        return "매우 위험";
       default:
         return "정보 없음";
     }
@@ -240,6 +240,7 @@ const Details = (props) => {
                 <div>
                   <h3 style={{ marginLeft: "9%" }}>정보</h3>
                   <p style={{ marginLeft: "9%" }}>
+                    연단거리 {l.gap}cm, 단차 {l.step}cm인{" "}
                     <span style={{ color: "red", fontWeight: "bold" }}>
                       {getGapText(l.gap)}
                     </span>
