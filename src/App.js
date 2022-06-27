@@ -188,19 +188,16 @@ class App extends React.Component {
             backgroundColor: "white",
           }}
         >
-          <RowAlign style={{ paddingTop: "2%", marginBottom: "1%" }}>
+          <RowAlign style={{ paddingTop: "3%", marginBottom: "2%" }}>
             <Link
               to={"/"}
               onClick={() => {
                 this.text.current.value = "";
                 this.setState({ isSelect: false });
               }}
+              style={{ width: "20%" }}
             >
-              <img
-                style={{ marginTop: "5px", width: "100px" }}
-                src={logo}
-                alt="main logo"
-              />
+              <img style={{ width: "100%" }} src={logo} alt="main logo" />
             </Link>
             <InputBox
               type="text"
@@ -238,6 +235,7 @@ const RowAlign = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
 `;
 

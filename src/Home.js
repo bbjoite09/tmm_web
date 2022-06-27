@@ -52,15 +52,17 @@ const Home = (props) => {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", overflow: "hidden" }}>
       <h3 style={{ margin: "5% 0 5% 10%" }}>자주 찾는 역</h3>
       <ColAlign>
         <Divider style={{ width: "100%", margin: "0 0 3% 0" }} />
-        <img
-          src={nowMyStationState ? null : mystationNone}
-          style={{ width: "100%" }}
-          alt="my station List"
-        />
+        {!nowMyStationState ? (
+          <img
+            src={mystationNone}
+            style={{ width: "100%" }}
+            alt="my station none"
+          />
+        ) : null}
 
         <MyStation>
           {myStationList.map((l, idx) => {
@@ -78,17 +80,22 @@ const Home = (props) => {
                     }}
                     alt="search station list"
                   />
-                  <text style={{ fontSize: "0.9375em", textAlign: "center" }}>
-                    {l.stationName}
+                  <text
+                    style={{
+                      fontSize: "0.9375em",
+                      textAlign: "center",
+                      marginTop: "10%",
+                      width: "50dp",
+                    }}
+                  >
+                    {l.stationName.split("(")[0]}
                   </text>
                 </ColAlign2>
               );
             }
           })}
         </MyStation>
-
         <Divider style={{ width: "100%", margin: "1% 0 5% 0" }} />
-
         <img
           src={tmm_info}
           style={{ width: "100%", marginTop: "5%" }}
@@ -99,12 +106,9 @@ const Home = (props) => {
         />
         <br />
         <br />
-
         {/*</Box>*/}
-
         {/* 우측 - 단차 위험 호선*/}
         {/*<Box style={{background: "white"}}>*/}
-
         {/*</Box>*/}
       </ColAlign>
       <h3 style={{ margin: "5% 0 0 10%", justifyContent: "flex-start" }}>
@@ -127,7 +131,7 @@ const ColAlign2 = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 3% 3% 3%;
+  margin: 0 4% 3% 4%;
 `;
 
 const MyStation = styled.div`
@@ -136,9 +140,10 @@ const MyStation = styled.div`
   display: flex;
   flex-direction: row;
   align-content: space-between;
-  margin-left: 20%;
   margin-bottom: 10px;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  padding: 0 20%;
+  overflow: scroll;
 `;
 
 export default withRouter(Home);
