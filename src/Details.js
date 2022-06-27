@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable array-callback-return */
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +15,8 @@ import selected6 from "./image/selected_line6.svg";
 import selected7 from "./image/selected_line7.svg";
 import selected8 from "./image/selected_line8.svg";
 import selected9 from "./image/selected_line9.svg";
+import selectedElse from "./image/selected_lineElse.svg";
+
 import checked from "./image/checked.svg";
 import unchecked from "./image/unchecked.svg";
 import yes from "./image/yes.svg";
@@ -90,6 +94,8 @@ const Details = (props) => {
         return selected8;
       case "9":
         return selected9;
+      default:
+        return selectedElse;
     }
   }
 
@@ -112,9 +118,9 @@ const Details = (props) => {
       case 1:
         return "양호";
       case 2:
-        return "다소위험";
+        return "다소 위험";
       case 3:
-        return "매우위험";
+        return "매우 위험";
       default:
         return "정보 없음";
     }
@@ -139,21 +145,32 @@ const Details = (props) => {
           backgroundColor: "white",
         }}
       >
-        <RowAlign style={{ marginLeft: "3%", marginTop: "2%" }}>
-          <img src={getImage(line[0])} style={{ margin: "1% 3% 1% 0" }} />
+        <RowAlign style={{ marginTop: "2%", marginLeft: "9%" }}>
+          <img
+            src={getImage(line[0])}
+            style={{ margin: "1% 3% 1% 0" }}
+            alt="line number"
+          />
           <img
             style={{ margin: "1% 0 1% 0" }}
             onClick={() => {
               dispatch1(updateCheck(name, line));
             }}
             src={myStationList[nowIdx].checkState ? checked : unchecked}
+            alt="book mark"
           />
         </RowAlign>
 
-        <h1 style={{ marginLeft: "3%" }}>
+        <h1 style={{ marginLeft: "9%" }}>
           {line} {name}
         </h1>
-        <img src={safeCheckFun(safeState)} style={{ width: "100%" }} />
+        {safeCheckFun(safeState) ? (
+          <img
+            src={safeCheckFun(safeState)}
+            style={{ width: "100%" }}
+            alt="safe check"
+          />
+        ) : null}
 
         {stationList.map((l, i) => {
           if (l.stationName === name && l.lineNum === lineNum) {
@@ -163,7 +180,7 @@ const Details = (props) => {
               <div>
                 <RowAlign
                   style={{
-                    height: "160px",
+                    height: "180px",
                     justifyContent: "space-evenly",
                     alignItems: "center",
                     backgroundColor: "#F8F8F8",
@@ -173,8 +190,9 @@ const Details = (props) => {
                     <img
                       src={getGapImg(l.gap)}
                       style={{ width: "50px", marginRight: "5%" }}
+                      alt="gap check"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       연단거리
                       <br />
                       <span style={{ color: "red", fontWeight: "bold" }}>
@@ -186,8 +204,9 @@ const Details = (props) => {
                     <img
                       src={l.step ? yes : no}
                       style={{ width: "50px", marginRight: "5%" }}
+                      alt="step check"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       단차
                       <br />
                       <span style={{ color: "red", fontWeight: "bold" }}>
@@ -197,45 +216,79 @@ const Details = (props) => {
                   </ColAlign>
                   <ColAlign>
                     <img
-                      src={l.ramp == 1 ? service : noService}
+                      src={l.ramp === 1 ? service : noService}
                       style={{
                         width: "5" + "0px",
                       }}
+                      alt="safe step service"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       안전발판
-                      <br />
-                      {l.ramp == 1 ? "서비스 제공" : "서비스 미제공"}
+                      <br />{" "}
+                      <span
+                        style={{
+                          color: l.ramp === 1 ? "#4378FF" : "red",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {l.ramp === 1 ? "서비스 제공" : "서비스 미제공"}
+                      </span>
                     </p>
                   </ColAlign>
                 </RowAlign>
                 <br />
                 <div>
-                  <h3 style={{ marginLeft: "3%" }}>정보</h3>
-                  <p style={{ marginLeft: "3%" }}>
+                  <h3 style={{ marginLeft: "9%" }}>정보</h3>
+                  <p style={{ marginLeft: "9%" }}>
+                    연단거리 {l.gap}cm, 단차 {l.step}cm인{" "}
                     <span style={{ color: "red", fontWeight: "bold" }}>
                       {getGapText(l.gap)}
                     </span>
                     으로 지정된 역입니다.
                   </p>
                   <Divider />
-                  <RowAlign>
+                  <RowAlign style={{ width: "100%" }}>
                     <p
                       style={{
-                        marginLeft: "3%",
+                        marginLeft: "9%",
                         width: "25%",
+                        marginBottom: 0,
                       }}
                     >
                       <b>안전승강장</b>
                     </p>
-                    <p style={{ marginRight: "3%" }}>상행 {l.dir1Position}</p>
-                    <p>하행 {l.dir2Position}</p>
+                    <div
+                      style={{
+                        width: "75%",
+                        marginLeft: "3%",
+                        paddingRight: "9%",
+                      }}
+                    >
+                      <RowAlign style={{ justifyContent: "space-between" }}>
+                        <p style={{ marginBottom: 0 }}>상행</p>
+                        <p style={{ marginBottom: 0 }}>{l.dir1Position}</p>
+                      </RowAlign>
+                      <RowAlign style={{ justifyContent: "space-between" }}>
+                        <p>하행</p>
+                        <p>{l.dir2Position}</p>
+                      </RowAlign>
+                    </div>
                   </RowAlign>
+                  <Divider />
                   <RowAlign>
-                    <p style={{ marginLeft: "3%", width: "25%" }}>
+                    <p style={{ marginLeft: "9%", width: "25%" }}>
                       <b>교통약자 탑승</b>
                     </p>
-                    <p style={{ width: "75%" }}>{l.accessPosition}</p>
+                    <p
+                      style={{
+                        width: "75%",
+                        textAlign: "right",
+                        paddingRight: "9%",
+                        wordBreak: "keep-all",
+                      }}
+                    >
+                      {l.accessPosition}
+                    </p>
                   </RowAlign>
                   <Divider />
                 </div>
@@ -246,12 +299,17 @@ const Details = (props) => {
 
         <br />
 
-        <h3 style={{ marginLeft: "3%" }}>헬프콜 서비스</h3>
-        <p style={{ marginLeft: "3%" }}>
+        <h3 style={{ marginLeft: "9%" }}>헬프콜 서비스</h3>
+        <p style={{ marginLeft: "9%" }}>
           역무원에게 안전발판을 요청할 수 있는 서비스입니다.
         </p>
         <ColAlign
-          style={{ justifyContent: "center", backgroundColor: "#F5F5F5" }}
+          style={{
+            justifyContent: "center",
+            backgroundColor: "#F5F5F5",
+            height: 200,
+            marginTop: "7%",
+          }}
         >
           <MsgModal name={name} line={line} phone={phone} />
           <CallModal name={name} line={line} phone={phone} />

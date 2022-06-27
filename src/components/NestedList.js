@@ -1,13 +1,16 @@
-import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
-
+/* eslint-disable no-useless-concat */
+import Accordion from "@material-ui/core/Accordion";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import Collapse from "@material-ui/core/Collapse";
 // resource
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import Collapse from "@material-ui/core/Collapse";
+import { makeStyles } from "@material-ui/core/styles";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import React from "react";
+import { withRouter } from "react-router";
 import line1 from "../image/selected_line1.svg";
 import line2 from "../image/selected_line2.svg";
 import line3 from "../image/selected_line3.svg";
@@ -17,30 +20,16 @@ import line6 from "../image/selected_line6.svg";
 import line7 from "../image/selected_line7.svg";
 import line8 from "../image/selected_line8.svg";
 import line9 from "../image/selected_line9.svg";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
-// lib
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { withRouter } from "react-router";
 import station from "../station.json";
 
 const NestedList = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open] = React.useState(true);
 
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-  };
-
-  const handleClick = () => {
-    setOpen(!open);
   };
 
   const tempDangerDB = [...station];
@@ -50,11 +39,11 @@ const NestedList = (props) => {
 
     for (var i = 0; i < tempDangerDB.length; i++) {
       // console.log(danger_list[i].stationName)
-      if (tempDangerDB[i].lineNum == line) {
+      if (tempDangerDB[i].lineNum === line) {
         if (
-          tempDangerDB[i].step == 1 ||
-          tempDangerDB[i].gap == 1 ||
-          tempDangerDB[i].gap == 2
+          tempDangerDB[i].step === 1 ||
+          tempDangerDB[i].gap === 1 ||
+          tempDangerDB[i].gap === 2
         ) {
           var stationName = tempDangerDB[i].stationName;
           dangerList = [...dangerList, stationName];
@@ -87,9 +76,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line1} />
+            <img src={line1} alt="line1" />
           </ListItemIcon>
           <text
             style={{
@@ -102,7 +92,9 @@ const NestedList = (props) => {
             1호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList1.map((list, index) => {
@@ -119,7 +111,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -140,9 +132,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
           id="panel2bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line2} />
+            <img src={line2} alt="line2" />
           </ListItemIcon>
           <text
             style={{
@@ -155,7 +148,9 @@ const NestedList = (props) => {
             2호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList2.map((list, index) => {
@@ -172,7 +167,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -193,9 +188,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
           id="panel3bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line3} />
+            <img src={line3} alt="line3" />
           </ListItemIcon>
           <text
             style={{
@@ -208,7 +204,9 @@ const NestedList = (props) => {
             3호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList3.map((list, index) => {
@@ -225,7 +223,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -246,9 +244,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
           id="panel3bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line4} />
+            <img src={line4} alt="line4" />
           </ListItemIcon>
           <text
             style={{
@@ -261,7 +260,9 @@ const NestedList = (props) => {
             4호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList4.map((list, index) => {
@@ -278,7 +279,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -299,9 +300,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel5bh-content"
           id="panel5bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line5} />
+            <img src={line5} alt="line5" />
           </ListItemIcon>
           <text
             style={{
@@ -314,7 +316,9 @@ const NestedList = (props) => {
             5호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList5.map((list, index) => {
@@ -331,7 +335,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -352,9 +356,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel6bh-content"
           id="panel6bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line6} />
+            <img src={line6} alt="line6" />
           </ListItemIcon>
           <text
             style={{
@@ -367,7 +372,9 @@ const NestedList = (props) => {
             6호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList6.map((list, index) => {
@@ -384,7 +391,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -405,9 +412,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel7bh-content"
           id="panel7bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line7} />
+            <img src={line7} alt="line7" />
           </ListItemIcon>
           <text
             style={{
@@ -420,7 +428,9 @@ const NestedList = (props) => {
             7호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList7.map((list, index) => {
@@ -437,7 +447,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -458,9 +468,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel8bh-content"
           id="panel8bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line8} />
+            <img src={line8} alt="line8" />
           </ListItemIcon>
           <text
             style={{
@@ -473,7 +484,9 @@ const NestedList = (props) => {
             8호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList8.map((list, index) => {
@@ -490,7 +503,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}
@@ -511,9 +524,10 @@ const NestedList = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel9bh-content"
           id="panel9bh-header"
+          style={{ padding: "0 10%" }}
         >
           <ListItemIcon>
-            <img src={line9} />
+            <img src={line9} alt="line9" />
           </ListItemIcon>
           <text
             style={{
@@ -526,7 +540,9 @@ const NestedList = (props) => {
             9호선
           </text>
         </AccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#F2F2F2" }}>
+        <AccordionDetails
+          style={{ backgroundColor: "#F2F2F2", padding: "3% 10%" }}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {dangerNameList9.map((list, index) => {
@@ -543,7 +559,7 @@ const NestedList = (props) => {
                       style={{
                         fontSize: "0.9375em",
                         color: "#616161",
-                        width: "440px",
+                        width: "400px",
                       }}
                     >
                       {list}

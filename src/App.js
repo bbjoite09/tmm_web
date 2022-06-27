@@ -1,24 +1,13 @@
-import React, { useLayoutEffect, useState } from "react";
-import { withRouter } from "react-router";
-import { Route, Link } from "react-router-dom";
-import { connect } from "react-redux";
-
-// DB
-import logo from "./image/tmm_logo_2.svg";
-import styled from "styled-components";
 import Divider from "@material-ui/core/Divider";
-
-import Home from "./Home";
-import None from "./None";
-import Details from "./Details";
-import TmmInfo from "./TmmInfo";
-import { loadDanger } from "./redux/modules/danger";
-
-import name_list from "./mystation.json";
 import * as Hangul from "hangul-js";
-import stationDB from "./station.json";
+import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { Link, Route } from "react-router-dom";
+import styled from "styled-components";
 import allStationDB from "./allStation.json";
-
+import Details from "./Details";
+import Home from "./Home";
 // image
 import selected1 from "./image/selected_line1.svg";
 import selected2 from "./image/selected_line2.svg";
@@ -29,6 +18,13 @@ import selected6 from "./image/selected_line6.svg";
 import selected7 from "./image/selected_line7.svg";
 import selected8 from "./image/selected_line8.svg";
 import selected9 from "./image/selected_line9.svg";
+import selectedElse from "./image/selected_lineElse.svg";
+// DB
+import logo from "./image/tmm_logo_2.svg";
+import None from "./None";
+import { loadDanger } from "./redux/modules/danger";
+import stationDB from "./station.json";
+import TmmInfo from "./TmmInfo";
 
 // 스토어가 가진 상태값을 props로 받아오기 위한 함수
 const mapStateTopProps = (state) => ({
@@ -45,19 +41,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const search_list = [...name_list];
-// console.log(search_list[0])
-
-// object에 초성필드 dissembled 추가
-// search_list.forEach(function (item) {
-//     var dis = Hangul.disassemble(item.stationName, true);
-//     var cho = dis.reduce(function (prev, elem) {
-//         elem = elem[0] ? elem[0] : elem;
-//         return prev + elem;
-//     }, "");
-//     item.diassembled = cho;
-// });
-
 allStationDB.forEach(function (item) {
   var dis = Hangul.disassemble(item.stationName, true);
   var cho = dis.reduce(function (prev, elem) {
@@ -66,32 +49,6 @@ allStationDB.forEach(function (item) {
   }, "");
   item.diassembled = cho;
 });
-
-// console.log(search_list);
-
-// 이미지 반환 함수 (모든역)
-// function getImage(line) {
-//     switch (line) {
-//         case "1호선" :
-//             return selected1;
-//         case "2호선" :
-//             return selected2;
-//         case "3호선" :
-//             return selected3;
-//         case "4호선" :
-//             return selected4;
-//         case "5호선" :
-//             return selected5;
-//         case "6호선" :
-//             return selected6;
-//         case "7호선" :
-//             return selected7;
-//         case "8호선" :
-//             return selected8;
-//         case "9호선" :
-//             return selected9;
-//     }
-// }
 
 //이미지 반환 함수 (stationDB 에 있는 역만)
 function getImage(line) {
@@ -115,7 +72,7 @@ function getImage(line) {
     case 9:
       return selected9;
     default:
-      return null;
+      return selectedElse;
   }
 }
 
@@ -155,9 +112,8 @@ class App extends React.Component {
     // const items = search_list.filter((data) => {
     const items = allStationDB
       .filter((data) => {
-        var str = "";
         if (this.state.search == null) {
-          return;
+          return null;
         } else if (
           data.stationName.includes(this.text.current.value) ||
           data.diassembled.includes(
@@ -169,6 +125,7 @@ class App extends React.Component {
         } else if (this.state.search === "") {
           this.props.history.push("/searchNone");
         }
+        return null;
       })
       .map((data) => {
         return (
@@ -183,7 +140,18 @@ class App extends React.Component {
                 // this.props.history.push('/details=' + data.lineNum[0] + data.stationName)
                 this.setState({ isSelect: false, isSearch: true });
                 this.text.current.value = "";
-                stationDB.stationName == this.state.search
+
+                const detailData = stationDB.find((myDetailData) => {
+                  if (myDetailData.stationName === data.stationName) {
+                    return {
+                      stationName: myDetailData.stationName,
+                      lineNum: myDetailData.lineNum,
+                    };
+                  } else {
+                    return null;
+                  }
+                });
+                detailData
                   ? this.props.history.push(
                       "/details=" + data.lineNum + data.stationName
                     )
@@ -200,6 +168,7 @@ class App extends React.Component {
                 <img
                   src={getImage(data.lineNum)}
                   style={{ width: "25px", marginLeft: "5%" }}
+                  alt="line information"
                 />
                 <p style={{ marginLeft: "3%" }}>{data.stationName}</p>
               </RowAlign>
@@ -219,9 +188,16 @@ class App extends React.Component {
             backgroundColor: "white",
           }}
         >
-          <RowAlign style={{ paddingTop: "2%", marginBottom: "1%" }}>
-            <Link to={"/"}>
-              <img style={{ marginTop: "5px", width: "100px" }} src={logo} />
+          <RowAlign style={{ paddingTop: "3%", marginBottom: "2%" }}>
+            <Link
+              to={"/"}
+              onClick={() => {
+                this.text.current.value = "";
+                this.setState({ isSelect: false });
+              }}
+              style={{ width: "20%" }}
+            >
+              <img style={{ width: "100%" }} src={logo} alt="main logo" />
             </Link>
             <InputBox
               type="text"
@@ -259,6 +235,7 @@ const RowAlign = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
 `;
 
