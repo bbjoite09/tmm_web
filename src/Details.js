@@ -145,7 +145,7 @@ const Details = (props) => {
           backgroundColor: "white",
         }}
       >
-        <RowAlign style={{ marginLeft: "3%", marginTop: "2%" }}>
+        <RowAlign style={{ marginTop: "2%", marginLeft: "9%" }}>
           <img
             src={getImage(line[0])}
             style={{ margin: "1% 3% 1% 0" }}
@@ -161,7 +161,7 @@ const Details = (props) => {
           />
         </RowAlign>
 
-        <h1 style={{ marginLeft: "3%" }}>
+        <h1 style={{ marginLeft: "9%" }}>
           {line} {name}
         </h1>
         {safeCheckFun(safeState) ? (
@@ -180,7 +180,7 @@ const Details = (props) => {
               <div>
                 <RowAlign
                   style={{
-                    height: "160px",
+                    height: "180px",
                     justifyContent: "space-evenly",
                     alignItems: "center",
                     backgroundColor: "#F8F8F8",
@@ -192,7 +192,7 @@ const Details = (props) => {
                       style={{ width: "50px", marginRight: "5%" }}
                       alt="gap check"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       연단거리
                       <br />
                       <span style={{ color: "red", fontWeight: "bold" }}>
@@ -206,7 +206,7 @@ const Details = (props) => {
                       style={{ width: "50px", marginRight: "5%" }}
                       alt="step check"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       단차
                       <br />
                       <span style={{ color: "red", fontWeight: "bold" }}>
@@ -222,7 +222,7 @@ const Details = (props) => {
                       }}
                       alt="safe step service"
                     />
-                    <p style={{ textAlign: "center" }}>
+                    <p style={{ textAlign: "center", marginBottom: 0 }}>
                       안전발판
                       <br />{" "}
                       <span
@@ -238,31 +238,56 @@ const Details = (props) => {
                 </RowAlign>
                 <br />
                 <div>
-                  <h3 style={{ marginLeft: "3%" }}>정보</h3>
-                  <p style={{ marginLeft: "3%" }}>
+                  <h3 style={{ marginLeft: "9%" }}>정보</h3>
+                  <p style={{ marginLeft: "9%" }}>
                     <span style={{ color: "red", fontWeight: "bold" }}>
                       {getGapText(l.gap)}
                     </span>
                     으로 지정된 역입니다.
                   </p>
                   <Divider />
-                  <RowAlign>
+                  <RowAlign style={{ width: "100%" }}>
                     <p
                       style={{
-                        marginLeft: "3%",
+                        marginLeft: "9%",
                         width: "25%",
+                        marginBottom: 0,
                       }}
                     >
                       <b>안전승강장</b>
                     </p>
-                    <p style={{ marginRight: "3%" }}>상행 {l.dir1Position}</p>
-                    <p>하행 {l.dir2Position}</p>
+                    <div
+                      style={{
+                        width: "75%",
+                        marginLeft: "3%",
+                        paddingRight: "9%",
+                      }}
+                    >
+                      <RowAlign style={{ justifyContent: "space-between" }}>
+                        <p style={{ marginBottom: 0 }}>상행</p>
+                        <p style={{ marginBottom: 0 }}>{l.dir1Position}</p>
+                      </RowAlign>
+                      <RowAlign style={{ justifyContent: "space-between" }}>
+                        <p>하행</p>
+                        <p>{l.dir2Position}</p>
+                      </RowAlign>
+                    </div>
                   </RowAlign>
+                  <Divider />
                   <RowAlign>
-                    <p style={{ marginLeft: "3%", width: "25%" }}>
+                    <p style={{ marginLeft: "9%", width: "25%" }}>
                       <b>교통약자 탑승</b>
                     </p>
-                    <p style={{ width: "75%" }}>{l.accessPosition}</p>
+                    <p
+                      style={{
+                        width: "75%",
+                        textAlign: "right",
+                        paddingRight: "9%",
+                        wordBreak: "keep-all",
+                      }}
+                    >
+                      {l.accessPosition}
+                    </p>
                   </RowAlign>
                   <Divider />
                 </div>
@@ -273,12 +298,17 @@ const Details = (props) => {
 
         <br />
 
-        <h3 style={{ marginLeft: "3%" }}>헬프콜 서비스</h3>
-        <p style={{ marginLeft: "3%" }}>
+        <h3 style={{ marginLeft: "9%" }}>헬프콜 서비스</h3>
+        <p style={{ marginLeft: "9%" }}>
           역무원에게 안전발판을 요청할 수 있는 서비스입니다.
         </p>
         <ColAlign
-          style={{ justifyContent: "center", backgroundColor: "#F5F5F5" }}
+          style={{
+            justifyContent: "center",
+            backgroundColor: "#F5F5F5",
+            height: 200,
+            marginTop: "7%",
+          }}
         >
           <MsgModal name={name} line={line} phone={phone} />
           <CallModal name={name} line={line} phone={phone} />
