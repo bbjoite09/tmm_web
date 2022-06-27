@@ -234,9 +234,9 @@ const Details = (props) => {
                   </ColAlign>
                 </RowAlign>
                 <br />
-                <div>
-                  <h3 style={{ marginLeft: "9%" }}>정보</h3>
-                  <p style={{ marginLeft: "9%" }}>
+                <div style={{ padding: "0 9%" }}>
+                  <h3>정보</h3>
+                  <p>
                     연단거리 {l.gap}cm, 단차 {l.step}cm인{" "}
                     <span style={{ color: "red", fontWeight: "bold" }}>
                       {getGapText(l.gap)}
@@ -247,18 +247,16 @@ const Details = (props) => {
                   <RowAlign style={{ width: "100%" }}>
                     <p
                       style={{
-                        marginLeft: "9%",
                         width: "25%",
                         marginBottom: 0,
+                        wordBreak: "keep-all",
                       }}
                     >
-                      <b>안전승강장</b>
+                      <b>안전 승강장</b>
                     </p>
                     <div
                       style={{
                         width: "75%",
-                        marginLeft: "3%",
-                        paddingRight: "9%",
                       }}
                     >
                       <RowAlign style={{ justifyContent: "space-between" }}>
@@ -273,14 +271,18 @@ const Details = (props) => {
                   </RowAlign>
                   <Divider />
                   <RowAlign>
-                    <p style={{ marginLeft: "9%", width: "25%" }}>
+                    <p
+                      style={{
+                        width: "25%",
+                        wordBreak: "keep-all",
+                      }}
+                    >
                       <b>교통약자 탑승</b>
                     </p>
                     <p
                       style={{
                         width: "75%",
                         textAlign: "right",
-                        paddingRight: "9%",
                         wordBreak: "keep-all",
                       }}
                     >
@@ -296,9 +298,9 @@ const Details = (props) => {
 
         <br />
 
-        <h3 style={{ marginLeft: "9%" }}>헬프콜 서비스</h3>
-        <p style={{ marginLeft: "9%" }}>
-          역무원에게 안전발판을 요청할 수 있는 서비스입니다.
+        <h3 style={{ padding: "0 9%" }}>헬프콜 서비스</h3>
+        <p style={{ padding: "0 9%" }}>
+          역무원에게 안전발판을 요청할 수 있는 서비스 입니다.
         </p>
         <ColAlign
           style={{
