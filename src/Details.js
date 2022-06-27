@@ -13,6 +13,8 @@ import selected6 from "./image/selected_line6.svg";
 import selected7 from "./image/selected_line7.svg";
 import selected8 from "./image/selected_line8.svg";
 import selected9 from "./image/selected_line9.svg";
+import selectedElse from "./image/selected_lineElse.svg";
+
 import checked from "./image/checked.svg";
 import unchecked from "./image/unchecked.svg";
 import yes from "./image/yes.svg";
@@ -90,6 +92,8 @@ const Details = (props) => {
         return selected8;
       case "9":
         return selected9;
+      default:
+        return selectedElse;
     }
   }
 
