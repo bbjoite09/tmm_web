@@ -112,7 +112,6 @@ class App extends React.Component {
     // const items = search_list.filter((data) => {
     const items = allStationDB
       .filter((data) => {
-        var str = "";
         if (this.state.search == null) {
           return null;
         } else if (
@@ -194,7 +193,7 @@ class App extends React.Component {
               to={"/"}
               onClick={() => {
                 this.text.current.value = "";
-                this.state.isSelect = false;
+                this.setState({ isSelect: false });
               }}
             >
               <img

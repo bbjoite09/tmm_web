@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable array-callback-return */
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
@@ -144,20 +146,31 @@ const Details = (props) => {
         }}
       >
         <RowAlign style={{ marginLeft: "3%", marginTop: "2%" }}>
-          <img src={getImage(line[0])} style={{ margin: "1% 3% 1% 0" }} />
+          <img
+            src={getImage(line[0])}
+            style={{ margin: "1% 3% 1% 0" }}
+            alt="line number"
+          />
           <img
             style={{ margin: "1% 0 1% 0" }}
             onClick={() => {
               dispatch1(updateCheck(name, line));
             }}
             src={myStationList[nowIdx].checkState ? checked : unchecked}
+            alt="book mark"
           />
         </RowAlign>
 
         <h1 style={{ marginLeft: "3%" }}>
           {line} {name}
         </h1>
-        <img src={safeCheckFun(safeState)} style={{ width: "100%" }} />
+        {safeCheckFun(safeState) ? (
+          <img
+            src={safeCheckFun(safeState)}
+            style={{ width: "100%" }}
+            alt="safe check"
+          />
+        ) : null}
 
         {stationList.map((l, i) => {
           if (l.stationName === name && l.lineNum === lineNum) {
@@ -177,6 +190,7 @@ const Details = (props) => {
                     <img
                       src={getGapImg(l.gap)}
                       style={{ width: "50px", marginRight: "5%" }}
+                      alt="gap check"
                     />
                     <p style={{ textAlign: "center" }}>
                       연단거리
@@ -190,6 +204,7 @@ const Details = (props) => {
                     <img
                       src={l.step ? yes : no}
                       style={{ width: "50px", marginRight: "5%" }}
+                      alt="step check"
                     />
                     <p style={{ textAlign: "center" }}>
                       단차
@@ -201,15 +216,23 @@ const Details = (props) => {
                   </ColAlign>
                   <ColAlign>
                     <img
-                      src={l.ramp == 1 ? service : noService}
+                      src={l.ramp === 1 ? service : noService}
                       style={{
                         width: "5" + "0px",
                       }}
+                      alt="safe step service"
                     />
                     <p style={{ textAlign: "center" }}>
                       안전발판
-                      <br />
-                      {l.ramp == 1 ? "서비스 제공" : "서비스 미제공"}
+                      <br />{" "}
+                      <span
+                        style={{
+                          color: l.ramp === 1 ? "#4378FF" : "red",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {l.ramp === 1 ? "서비스 제공" : "서비스 미제공"}
+                      </span>
                     </p>
                   </ColAlign>
                 </RowAlign>
