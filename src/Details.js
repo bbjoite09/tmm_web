@@ -1,10 +1,20 @@
 /* eslint-disable no-useless-concat */
 /* eslint-disable array-callback-return */
+import Divider from "@material-ui/core/Divider";
 import React from "react";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
-
+import styled from "styled-components";
+import CallModal from "./components/CallModal";
+// components
+import MsgModal from "./components/MsgModal";
+import checked from "./image/checked.svg";
+import danger from "./image/danger.svg";
+import good from "./image/good.svg";
+import no from "./image/no.svg";
+import noService from "./image/noService.JPG";
+import safe from "./image/safe.svg";
+import service from "./image/safeService.svg";
 // image resource
 import selected1 from "./image/selected_line1.svg";
 import selected2 from "./image/selected_line2.svg";
@@ -16,22 +26,9 @@ import selected7 from "./image/selected_line7.svg";
 import selected8 from "./image/selected_line8.svg";
 import selected9 from "./image/selected_line9.svg";
 import selectedElse from "./image/selected_lineElse.svg";
-
-import checked from "./image/checked.svg";
 import unchecked from "./image/unchecked.svg";
-import yes from "./image/yes.svg";
-import no from "./image/no.svg";
-import good from "./image/good.svg";
-import danger from "./image/danger.svg";
 import veryDanger from "./image/veryDanger.svg";
-import safe from "./image/safe.svg";
-import service from "./image/safeService.svg";
-import noService from "./image/noService.JPG";
-import Divider from "@material-ui/core/Divider";
-
-// components
-import MsgModal from "./components/MsgModal";
-import CallModal from "./components/CallModal";
+import yes from "./image/yes.svg";
 import { safeCheck, updateCheck } from "./redux/modules/danger";
 import stationDB from "./station.json";
 
@@ -145,7 +142,7 @@ const Details = (props) => {
           backgroundColor: "white",
         }}
       >
-        <RowAlign style={{ marginTop: "2%", marginLeft: "9%" }}>
+        <RowAlign style={{ marginTop: "3%", marginLeft: "9%" }}>
           <img
             src={getImage(line[0])}
             style={{ margin: "1% 3% 1% 0" }}
@@ -161,7 +158,7 @@ const Details = (props) => {
           />
         </RowAlign>
 
-        <h1 style={{ marginLeft: "9%" }}>
+        <h1 style={{ marginLeft: "9%", marginTop: "2%" }}>
           {line} {name}
         </h1>
         {safeCheckFun(safeState) ? (

@@ -1,10 +1,11 @@
 /* eslint-disable array-callback-return */
 import Divider from "@material-ui/core/Divider";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
 import styled from "styled-components";
 import NestedList from "./components/NestedList";
+import floating from "./image/floating.png";
 import mystation1 from "./image/mystation_1.svg";
 import mystation2 from "./image/mystation_2.svg";
 import mystation3 from "./image/mystation_3.svg";
@@ -15,7 +16,6 @@ import mystation7 from "./image/mystation_7.svg";
 import mystation8 from "./image/mystation_8.svg";
 import mystation9 from "./image/mystation_9.svg";
 import mystationNone from "./image/mystation_none.svg";
-
 import tmm_info from "./image/tmm_info.svg";
 import { myStateCheck } from "./redux/modules/danger";
 
@@ -25,6 +25,20 @@ const Home = (props) => {
     (state) => state.danger.isMystationState
   );
   const dispatch = useDispatch();
+  const [isScroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    let prevScrollTop = 0;
+    document.addEventListener("scroll", function () {
+      let nextScrollTop = window.scrollY;
+      if (nextScrollTop < 10) {
+        setScroll(false);
+      } else if (nextScrollTop > prevScrollTop) {
+        setScroll(true);
+      }
+      prevScrollTop = nextScrollTop;
+    });
+  }, []);
 
   function getImage(line) {
     switch (line) {
@@ -115,6 +129,25 @@ const Home = (props) => {
         단차 위험 호선
       </h3>
       <NestedList {...props} />
+      {isScroll ? (
+        <img
+          src={floating}
+          style={{
+            width: window.innerWidth > 500 ? 70 : "15%",
+            position: "fixed",
+            bottom: 20,
+            right: window.innerWidth > 500 ? window.innerWidth / 2 - 35 : 20,
+          }}
+          onClick={() => {
+            setScroll(false);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          alt="floating button"
+        />
+      ) : null}
     </div>
   );
 };
